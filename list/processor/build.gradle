@@ -1,0 +1,20 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'kotlin-kapt'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+dependencies {
+    //noinspection AnnotationProcessorOnCompilePath
+    implementation 'com.google.auto.service:auto-service:1.0'
+
+    // Java 中由类名和包名生成 Java文件 的库
+    implementation 'com.squareup:javapoet:1.13.0'
+
+    implementation project(':list:expand')
+}
