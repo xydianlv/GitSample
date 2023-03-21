@@ -1,11 +1,12 @@
 package com.example.gitsample.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.gitsample.base.BaseActivity
 import com.example.gitsample.databinding.ActivityMainBinding
 import com.example.gitsample.function.ActivityFunctionList
+import com.example.gitsample.base.PageType
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -18,12 +19,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initActivity() {
+        initBar()
         initList()
     }
 
+    private fun initBar() {
+        binding.toolbar.initShow(PageType.MAIN.title)
+    }
+
     private fun initList() {
-        binding.mainList.addItem("FunctionList", "一些好玩的小功能") {
+        binding.mainList.addItem(PageType.FUNCTION.title, PageType.FUNCTION.info) {
             ActivityFunctionList.open(this)
+        }.addItem(PageType.CANVAS.title, PageType.CANVAS.info) {
+
         }.refreshList()
     }
 }

@@ -1,16 +1,41 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
-    <style name="Theme.GitSample" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
+    <!--<style name="Theme.GitSample" parent="Theme.MaterialComponents.DayNight.DarkActionBar">-->
+    <!--    &lt;!&ndash; Primary brand color. &ndash;&gt;-->
+    <!--    <item name="colorPrimary">@color/color_shadow</item>-->
+    <!--    <item name="colorPrimaryVariant">@color/color_shadow</item>-->
+    <!--    <item name="colorOnPrimary">@color/color_white</item>-->
+    <!--    &lt;!&ndash; Secondary brand color. &ndash;&gt;-->
+    <!--    <item name="colorSecondary">@color/color_shadow</item>-->
+    <!--    <item name="colorSecondaryVariant">@color/color_shadow</item>-->
+    <!--    <item name="colorOnSecondary">@color/color_black</item>-->
+    <!--    &lt;!&ndash; Status bar color. &ndash;&gt;-->
+    <!--    <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>-->
+    <!--    &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--</style>-->
+
+    <style name="Theme.GitSample" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- 闪动黑屏问题 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 应用主背景色 -->
+        <item name="android:windowBackground">@color/color_white</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- 设置无标题栏 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置无 ActionBar -->
+        <item name="android:windowActionBar">false</item>
+        <!-- Primary brand color. 列表拖动到尾部的月牙形阴影 -->
+        <item name="colorPrimary">@color/color_shadow</item>
+        <!-- 控件在选中时默认使用该颜色 -->
+        <item name="colorAccent">@color/color_white</item>
     </style>
+
+    <style name="ThemeSplash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/color_white</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
 </resources>

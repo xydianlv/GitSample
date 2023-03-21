@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/list/expand" />
             <option value="$PROJECT_DIR$/list/multi" />
             <option value="$PROJECT_DIR$/list/processor" />
+            <option value="$PROJECT_DIR$/resource" />
           </set>
         </option>
       </GradleProjectSettings>

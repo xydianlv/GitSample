@@ -8,7 +8,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/padding_12"
+        android:layout_marginStart="@dimen/padding_14"
         android:layout_marginTop="@dimen/padding_10"
         android:text="@string/app_name"
         android:textColor="@color/ct_1"
@@ -37,8 +37,8 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/padding_12"
-        android:src="@mipmap/common_arrow_right"
+        android:layout_marginEnd="@dimen/padding_14"
+        android:src="@drawable/ic_common_arrow_right"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

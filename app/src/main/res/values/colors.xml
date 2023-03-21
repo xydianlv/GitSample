@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <!--透明-->
+    <color name="color_empty">#00000000</color>
+    <!--阴影-->
+    <color name="color_shadow">#FFE8E8E8</color>
+    <!--白色-->
+    <color name="color_white">#FFFFFFFF</color>
+    <!--黑色-->
+    <color name="color_black">#FF000000</color>
+    <!--灰色-->
+    <color name="color_gray">#FF84919b</color>
 
     <!-- color_text_1 重要文字颜色，一般为导航栏标题、Toolbar标题、帖子内容 -->
     <color name="ct_1">#ff333333</color>
@@ -15,7 +20,7 @@
     <!-- color_text_3 辅助信息 -->
     <color name="ct_3">#ff999999</color>
 
-    <!--一级线条色-->
+    <!--线条色-->
     <color name="color_line">#FFE8E8E8</color>
 
 </resources>
