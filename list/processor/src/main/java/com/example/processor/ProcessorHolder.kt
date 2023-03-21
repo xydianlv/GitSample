@@ -62,7 +62,7 @@ class ProcessorHolder : AbstractProcessor() {
         strBuilder.append("import androidx.annotation.NonNull;\n")
         strBuilder.append("import androidx.annotation.Nullable;\n")
         strBuilder.append("import androidx.annotation.Keep;\n")
-        strBuilder.append("import com.wyyu.multi.holder.IViewHolder;\n")
+        strBuilder.append("import com.example.multi.holder.IViewHolder;\n")
         strBuilder.append("import android.view.LayoutInflater;\n")
         strBuilder.append("import android.view.ViewGroup;\n")
         strBuilder.append("import android.view.View;\n\n")
