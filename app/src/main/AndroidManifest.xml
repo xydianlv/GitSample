@@ -44,6 +44,14 @@
             android:name=".function.lock.finger.ActivityFingerLock"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".function.screen.ActivityShotScreen"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".system.ActivitySystemList"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>

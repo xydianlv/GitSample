@@ -7,6 +7,7 @@ enum class PageType(val title: String, val info: String) {
     // MAIN 下面的跳转界面
     FUNCTION("FunctionList", "一些好玩的小功能"),
     CANVAS("CanvasList", "Canvas绘制方法收集"),
+    SYSTEM("SystemList", "系统属性和接口实现"),
 
     // FUNCTION 下面的跳转界面
     GESTURE_LOCK("GestureLock", "九宫格解锁"),

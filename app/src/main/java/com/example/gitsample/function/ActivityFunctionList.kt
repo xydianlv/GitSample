@@ -8,6 +8,7 @@ import com.example.gitsample.base.PageType
 import com.example.gitsample.databinding.ActivityFunctionListBinding
 import com.example.gitsample.function.lock.finger.ActivityFingerLock
 import com.example.gitsample.function.lock.gesture.ActivityGestureLock
+import com.example.gitsample.function.screen.ActivityShotScreen
 
 class ActivityFunctionList : BaseActivity() {
 
@@ -44,7 +45,7 @@ class ActivityFunctionList : BaseActivity() {
         }.addItem(PageType.FINGER_LOCK.title, PageType.FINGER_LOCK.info) {
             ActivityFingerLock.open(this)
         }.addItem(PageType.SHOT_SCREEN.title, PageType.SHOT_SCREEN.info) {
-            ActivityFingerLock.open(this)
+            ActivityShotScreen.open(this)
         }.addItem(PageType.WALLPAPER.title, PageType.WALLPAPER.info) {
             ActivityFingerLock.open(this)
         }.addItem(PageType.FLOAT_DRAG.title, PageType.FLOAT_DRAG.info) {

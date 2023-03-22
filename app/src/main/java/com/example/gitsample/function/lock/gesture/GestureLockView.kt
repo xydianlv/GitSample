@@ -1,4 +1,4 @@
-package com.example.gitsample.function.lock.finger
+package com.example.gitsample.function.lock.gesture
 
 import android.content.Context
 import android.graphics.BitmapFactory

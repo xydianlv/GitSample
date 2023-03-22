@@ -14,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.gitsample.function.lock.finger.GestureLockView
+    <com.example.gitsample.function.lock.gesture.GestureLockView
         android:layout_width="256.0dp"
         android:layout_height="256.0dp"
         app:layout_constraintBottom_toTopOf="@id/alert"
