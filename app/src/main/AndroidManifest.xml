@@ -12,12 +12,13 @@
         android:roundIcon="@mipmap/ic_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.GitSample"
+        tools:ignore="LockedOrientationActivity"
         tools:targetApi="33">
 
         <activity
             android:name=".main.ActivitySplash"
             android:exported="true"
-            android:screenOrientation="fullSensor"
+            android:screenOrientation="portrait"
             android:theme="@style/ThemeSplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,11 +30,19 @@
             android:name=".main.MainActivity"
             android:exported="true"
             android:launchMode="singleTask"
-            android:screenOrientation="fullSensor" />
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".function.ActivityFunctionList"
-            android:screenOrientation="fullSensor" />
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".function.lock.gesture.ActivityGestureLock"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".function.lock.finger.ActivityFingerLock"
+            android:screenOrientation="portrait" />
 
     </application>
 

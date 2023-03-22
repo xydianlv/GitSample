@@ -14,13 +14,18 @@
     <color name="color_gray">#FF84919b</color>
 
     <!-- color_text_1 重要文字颜色，一般为导航栏标题、Toolbar标题、帖子内容 -->
-    <color name="ct_1">#ff333333</color>
+    <color name="ct_1">#FF333333</color>
     <!-- color_text_2 次重要文字颜色，一般为用户名、话题名 -->
-    <color name="ct_2">#ff666666</color>
+    <color name="ct_2">#FF666666</color>
     <!-- color_text_3 辅助信息 -->
-    <color name="ct_3">#ff999999</color>
+    <color name="ct_3">#FF999999</color>
 
     <!--线条色-->
     <color name="color_line">#FFE8E8E8</color>
+
+    <!--线条色-->
+    <color name="color_lock_n">#FF007EE5</color>
+    <!--线条色-->
+    <color name="color_lock_f">#FFFF0000</color>
 
 </resources>
