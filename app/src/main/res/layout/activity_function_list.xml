@@ -7,7 +7,7 @@
     <com.example.gitsample.widget.common.CommonToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="48.0dp"
+        android:layout_height="@dimen/height_toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

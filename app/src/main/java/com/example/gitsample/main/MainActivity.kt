@@ -29,12 +29,12 @@ class MainActivity : BaseActivity() {
     }
 
     private fun initList() {
-        binding.mainList.addItem(PageType.FUNCTION.title, PageType.FUNCTION.info) {
-            ActivityFunctionList.open(this)
+        binding.mainList.addItem(PageType.SYSTEM.title, PageType.SYSTEM.info) {
+            ActivitySystemList.open(this)
         }.addItem(PageType.CANVAS.title, PageType.CANVAS.info) {
 
-        }.addItem(PageType.SYSTEM.title, PageType.SYSTEM.info) {
-            ActivitySystemList.open(this)
+        }.addItem(PageType.FUNCTION.title, PageType.FUNCTION.info) {
+            ActivityFunctionList.open(this)
         }.refreshList()
     }
 }

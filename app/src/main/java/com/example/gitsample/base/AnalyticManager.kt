@@ -2,6 +2,7 @@ package com.example.gitsample.base
 
 import android.app.Activity
 import android.app.Application
+import android.content.Context
 import android.os.Bundle
 import java.lang.ref.WeakReference
 
@@ -15,9 +16,11 @@ class AnalyticManager private constructor() {
         val manager = AnalyticManager()
     }
 
-    private var weakReference: WeakReference<Activity>? = null
+    private var weakReferenceActivity: WeakReference<Activity>? = null
+    private var appContext: Context? = null
 
     fun initManager(app: Application) {
+        appContext = app.baseContext
         app.registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
             override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
             }
@@ -26,7 +29,7 @@ class AnalyticManager private constructor() {
             }
 
             override fun onActivityResumed(activity: Activity) {
-                weakReference = WeakReference(activity)
+                weakReferenceActivity = WeakReference(activity)
             }
 
             override fun onActivityPaused(activity: Activity) {
@@ -44,6 +47,10 @@ class AnalyticManager private constructor() {
     }
 
     fun currentActivity(): Activity? {
-        return weakReference?.get()
+        return weakReferenceActivity?.get()
+    }
+
+    fun appContext(): Context? {
+        return appContext
     }
 }

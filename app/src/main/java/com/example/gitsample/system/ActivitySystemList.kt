@@ -6,6 +6,8 @@ import android.os.Bundle
 import com.example.gitsample.base.BaseActivity
 import com.example.gitsample.base.PageType
 import com.example.gitsample.databinding.ActivitySystemListBinding
+import com.example.gitsample.system.file.ActivityFileManager
+import com.example.gitsample.system.permission.ActivityPermissionCheck
 
 class ActivitySystemList : BaseActivity() {
 
@@ -36,6 +38,10 @@ class ActivitySystemList : BaseActivity() {
     }
 
     private fun initList() {
-
+        binding.list.addItem(PageType.PERMISSION.title, PageType.PERMISSION.info) {
+            ActivityPermissionCheck.open(this)
+        }.addItem(PageType.FILE_MANAGER.title, PageType.FILE_MANAGER.info) {
+            ActivityFileManager.open(this)
+        }.refreshList()
     }
 }

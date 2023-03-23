@@ -13,4 +13,6 @@
     <dimen name="padding_6">6.0dp</dimen>
     <dimen name="padding_4">4.0dp</dimen>
 
+    <dimen name="height_toolbar">48.0dp</dimen>
+
 </resources>

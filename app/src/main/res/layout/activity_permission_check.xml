@@ -8,14 +8,24 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_toolbar"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.gitsample.widget.list.CommonListView
-        android:id="@+id/main_list"
+    <com.example.gitsample.system.permission.PermissionItemView
+        android:id="@+id/storage"
         android:layout_width="match_parent"
-        android:layout_height="0.0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <com.example.gitsample.system.permission.PermissionItemView
+        android:id="@+id/location_fine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/storage" />
+
+    <com.example.gitsample.system.permission.PermissionItemView
+        android:id="@+id/location_coarse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/location_fine" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
