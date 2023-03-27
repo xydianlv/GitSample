@@ -10,6 +10,7 @@ import com.example.gitsample.databinding.ActivityPermissionCheckBinding
 /**
  * 权限需要先声明，才能再动态申请
  */
+
 class ActivityPermissionCheck : BaseActivity() {
 
     companion object {
@@ -34,6 +35,10 @@ class ActivityPermissionCheck : BaseActivity() {
         binding.storage.refreshStatus(PermissionChecker.hasPermission(PermissionItemType.EXTERNAL_STORAGE))
         binding.locationFine.refreshStatus(PermissionChecker.hasPermission(PermissionItemType.LOCATION_FINE))
         binding.locationCoarse.refreshStatus(PermissionChecker.hasPermission(PermissionItemType.LOCATION_COARSE))
+        binding.camera.refreshStatus(PermissionChecker.hasPermission(PermissionItemType.CAMERA))
+        binding.record.refreshStatus(PermissionChecker.hasPermission(PermissionItemType.RECORD_AUDIO))
+        binding.wallpaper.refreshStatus(PermissionChecker.hasPermission(PermissionItemType.WALLPAPER))
+        binding.calendar.refreshStatus(PermissionChecker.hasPermission(PermissionItemType.CALENDAR))
     }
 
     private fun initActivity() {
@@ -49,5 +54,9 @@ class ActivityPermissionCheck : BaseActivity() {
         binding.storage.initItemShow(PermissionItemType.EXTERNAL_STORAGE)
         binding.locationFine.initItemShow(PermissionItemType.LOCATION_FINE)
         binding.locationCoarse.initItemShow(PermissionItemType.LOCATION_COARSE)
+        binding.camera.initItemShow(PermissionItemType.CAMERA)
+        binding.record.initItemShow(PermissionItemType.RECORD_AUDIO)
+        binding.wallpaper.initItemShow(PermissionItemType.WALLPAPER)
+        binding.calendar.initItemShow(PermissionItemType.CALENDAR)
     }
 }

@@ -28,4 +28,28 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/location_fine" />
 
+    <com.example.gitsample.system.permission.PermissionItemView
+        android:id="@+id/camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/location_coarse" />
+
+    <com.example.gitsample.system.permission.PermissionItemView
+        android:id="@+id/record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/camera" />
+
+    <com.example.gitsample.system.permission.PermissionItemView
+        android:id="@+id/wallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/record" />
+
+    <com.example.gitsample.system.permission.PermissionItemView
+        android:id="@+id/calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/wallpaper" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

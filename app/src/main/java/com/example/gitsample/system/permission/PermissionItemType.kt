@@ -24,9 +24,14 @@ enum class PermissionItemType(val title: String, val info: String, val permissio
         "摄像头权限",
         Manifest.permission.CAMERA
     ),
+    RECORD_AUDIO(
+        "RecordAudio",
+        "麦克风权限",
+        Manifest.permission.RECORD_AUDIO
+    ),
     WALLPAPER(
         "Wallpaper",
-        "壁纸设置权限",
+        "壁纸设置权限，注册后就会拥有该权限",
         Manifest.permission.SET_WALLPAPER
     ),
     CALENDAR(
