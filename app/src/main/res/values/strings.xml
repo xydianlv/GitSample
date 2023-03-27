@@ -7,4 +7,6 @@
     <string name="permission_to_request">去开启</string>
     <string name="permission_has_request">已开启</string>
 
+    <string name="path_manager_alert">点击下面文件类型，其路径会展示在此处</string>
+
 </resources>

@@ -9,6 +9,7 @@ import com.example.gitsample.databinding.ActivityFunctionListBinding
 import com.example.gitsample.function.lock.finger.ActivityFingerLock
 import com.example.gitsample.function.lock.gesture.ActivityGestureLock
 import com.example.gitsample.function.screen.ActivityShotScreen
+import com.example.gitsample.widget.list.CommonListItemData
 
 class ActivityFunctionList : BaseActivity() {
 
@@ -40,18 +41,18 @@ class ActivityFunctionList : BaseActivity() {
     }
 
     private fun initList() {
-        binding.list.addItem(PageType.GESTURE_LOCK.title, PageType.GESTURE_LOCK.info) {
+        binding.list.addItem(CommonListItemData.buildData(PageType.GESTURE_LOCK) {
             ActivityGestureLock.open(this)
-        }.addItem(PageType.FINGER_LOCK.title, PageType.FINGER_LOCK.info) {
+        }).addItem(CommonListItemData.buildData(PageType.FINGER_LOCK) {
             ActivityFingerLock.open(this)
-        }.addItem(PageType.SHOT_SCREEN.title, PageType.SHOT_SCREEN.info) {
+        }).addItem(CommonListItemData.buildData(PageType.SHOT_SCREEN) {
             ActivityShotScreen.open(this)
-        }.addItem(PageType.WALLPAPER.title, PageType.WALLPAPER.info) {
+        }).addItem(CommonListItemData.buildData(PageType.WALLPAPER) {
             ActivityFingerLock.open(this)
-        }.addItem(PageType.FLOAT_DRAG.title, PageType.FLOAT_DRAG.info) {
+        }).addItem(CommonListItemData.buildData(PageType.FLOAT_DRAG) {
             ActivityFingerLock.open(this)
-        }.addItem(PageType.SHOT_CUT.title, PageType.SHOT_CUT.info) {
+        }).addItem(CommonListItemData.buildData(PageType.SHOT_CUT) {
             ActivityFingerLock.open(this)
-        }.refreshList()
+        }).refreshList()
     }
 }

@@ -8,6 +8,7 @@ import com.example.gitsample.base.PageType
 import com.example.gitsample.databinding.ActivitySystemListBinding
 import com.example.gitsample.system.file.ActivityFileManager
 import com.example.gitsample.system.permission.ActivityPermissionCheck
+import com.example.gitsample.widget.list.CommonListItemData
 
 class ActivitySystemList : BaseActivity() {
 
@@ -38,10 +39,10 @@ class ActivitySystemList : BaseActivity() {
     }
 
     private fun initList() {
-        binding.list.addItem(PageType.PERMISSION.title, PageType.PERMISSION.info) {
+        binding.list.addItem(CommonListItemData.buildData(PageType.PERMISSION) {
             ActivityPermissionCheck.open(this)
-        }.addItem(PageType.FILE_MANAGER.title, PageType.FILE_MANAGER.info) {
+        }).addItem(CommonListItemData.buildData(PageType.FILE_MANAGER) {
             ActivityFileManager.open(this)
-        }.refreshList()
+        }).refreshList()
     }
 }

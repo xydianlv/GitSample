@@ -29,8 +29,13 @@ class CommonListView : RecyclerView {
         adapter = listAdapter
     }
 
-    fun addItem(title: String, info: String?, clickListener: OnClickListener): CommonListView {
-        dataList.add(CommonListItemData(title, info, clickListener))
+    fun addItem(itemData: CommonListItemData): CommonListView {
+        dataList.add(itemData)
+        return this
+    }
+
+    fun initList(list: ArrayList<CommonListItemData>): CommonListView {
+        dataList.addAll(list)
         return this
     }
 

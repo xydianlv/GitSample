@@ -6,6 +6,7 @@ import com.example.gitsample.databinding.ActivityMainBinding
 import com.example.gitsample.function.ActivityFunctionList
 import com.example.gitsample.base.PageType
 import com.example.gitsample.system.ActivitySystemList
+import com.example.gitsample.widget.list.CommonListItemData
 
 class MainActivity : BaseActivity() {
 
@@ -29,12 +30,12 @@ class MainActivity : BaseActivity() {
     }
 
     private fun initList() {
-        binding.mainList.addItem(PageType.SYSTEM.title, PageType.SYSTEM.info) {
+        binding.mainList.addItem(CommonListItemData.buildData(PageType.SYSTEM) {
             ActivitySystemList.open(this)
-        }.addItem(PageType.CANVAS.title, PageType.CANVAS.info) {
+        }).addItem(CommonListItemData.buildData(PageType.CANVAS) {
 
-        }.addItem(PageType.FUNCTION.title, PageType.FUNCTION.info) {
+        }).addItem(CommonListItemData.buildData(PageType.FUNCTION) {
             ActivityFunctionList.open(this)
-        }.refreshList()
+        }).refreshList()
     }
 }
