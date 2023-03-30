@@ -1,6 +1,8 @@
 package com.example.gitsample.system.permission
 
 import android.Manifest
+import android.os.Build
+import androidx.annotation.RequiresApi
 
 enum class PermissionItemType(val title: String, val info: String, val permission: String) {
 
@@ -38,5 +40,11 @@ enum class PermissionItemType(val title: String, val info: String, val permissio
         "Calendar",
         "日历读写权限",
         Manifest.permission.WRITE_CALENDAR
+    ),
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+    NOTIFICATION(
+        "Notification",
+        "推送权限，该权限仅在 api33 上生效",
+        Manifest.permission.POST_NOTIFICATIONS
     )
 }

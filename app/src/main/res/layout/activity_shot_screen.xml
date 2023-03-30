@@ -1,6 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <com.example.gitsample.widget.common.CommonToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_toolbar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/padding_12"
+        android:src="@mipmap/img_avatar_0"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <View
+        android:id="@+id/divide_0"
+        style="@style/my_divide_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/alert_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_toolbar"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/padding_14"
+        android:text="@string/shot_screen_alert_image"
+        android:textColor="@color/ct_3"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintTop_toBottomOf="@id/divide_0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/click_image"
+        android:layout_width="wrap_content"
+        android:layout_height="0.0dp"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/padding_14"
+        android:text="@string/shot_screen_click_image"
+        android:textColor="@color/color_alert"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintBottom_toTopOf="@id/divide_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/divide_0" />
+
+    <View
+        android:id="@+id/divide_1"
+        style="@style/my_divide_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/alert_image" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        app:layout_constraintBottom_toTopOf="@id/alert_scroll"
+        app:layout_constraintTop_toTopOf="@id/divide_1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingVertical="@dimen/padding_14">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/ct_1"
+                android:textSize="@dimen/text_15" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_12"
+                android:src="@mipmap/img_avatar_0" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_12"
+                android:src="@mipmap/img_avatar_2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_12"
+                android:src="@mipmap/img_avatar_4" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_12"
+                android:text="@string/app_name"
+                android:textColor="@color/ct_1"
+                android:textSize="@dimen/text_15" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <View
+        android:id="@+id/divide_2"
+        style="@style/my_divide_line"
+        app:layout_constraintBottom_toTopOf="@id/alert_scroll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/alert_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_toolbar"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/padding_14"
+        android:text="@string/shot_screen_alert_scroll"
+        android:textColor="@color/ct_3"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/click_scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="0.0dp"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/padding_14"
+        android:text="@string/shot_screen_click_scroll"
+        android:textColor="@color/color_alert"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/divide_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

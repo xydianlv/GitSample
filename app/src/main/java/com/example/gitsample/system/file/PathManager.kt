@@ -89,7 +89,7 @@ class PathManager private constructor() : IPath {
 
     private fun initExtraMediaPath() {
         val context = AnalyticManager.manager.appContext()
-        val mediaPath = context?.getExternalFilesDir(Environment.DIRECTORY_PICTURES)?.absolutePath
+        val mediaPath = context?.getExternalFilesDir(Environment.DIRECTORY_DCIM)?.absolutePath
         extraMediaPath = if (mediaPath?.isNotEmpty() == true) {
             checkPath(mediaPath + "/" + FileType.DCIM_DIR + "/")
         } else {
