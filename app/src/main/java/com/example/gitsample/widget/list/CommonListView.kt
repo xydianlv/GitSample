@@ -42,5 +42,19 @@ class CommonListView : RecyclerView {
     fun refreshList() {
         listAdapter?.initList(dataList)
     }
+
+    fun refreshItem(itemData: CommonListItemData): CommonListView {
+        if (dataList.isEmpty()) {
+            return this
+        }
+        for (index in 0 until dataList.size) {
+            val data = dataList[index]
+            if (data.checkAndRefresh(itemData)) {
+                adapter?.notifyItemChanged(index)
+                break
+            }
+        }
+        return this
+    }
 }
 
