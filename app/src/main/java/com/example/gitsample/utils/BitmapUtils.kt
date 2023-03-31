@@ -1,4 +1,4 @@
-package com.example.gitsample.function.screen
+package com.example.gitsample.utils
 
 import android.app.Activity
 import android.graphics.Bitmap
@@ -8,20 +8,16 @@ import android.os.Handler
 import android.os.Looper
 import android.view.PixelCopy
 import android.view.View
-import com.example.gitsample.utils.ZLog
-import com.example.gitsample.utils.ZToast
+import android.widget.ScrollView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.io.File
 import java.io.FileOutputStream
 
-object ShotScreenUtils {
-
-    @JvmStatic
-    fun getBitmapFromView(view: View): Bitmap {
-        val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
-        val canvas = Canvas(bitmap)
-        view.draw(canvas)
-        return bitmap
-    }
+object BitmapUtils {
 
     @JvmStatic
     fun getBitmapFromView(view: View, call: (Bitmap?) -> Unit) {
@@ -52,10 +48,32 @@ object ShotScreenUtils {
     }
 
     @JvmStatic
-    fun saveBitmapToFile(bitmap: Bitmap, filePath: String) {
+    fun getBitmapFromScroll(view: ScrollView, call: (Bitmap?) -> Unit) {
+        val activity = view.context
+        if (activity !is AppCompatActivity || activity.window == null) {
+            return call.invoke(null)
+        }
+        var viewHeight = 0
+        for (index in 0 until view.childCount) {
+            val child = view.getChildAt(index)
+            viewHeight += child.height
+        }
+        activity.lifecycleScope.launch {
+            val bitmap = withContext(Dispatchers.IO) {
+                val bitmap = Bitmap.createBitmap(view.width, viewHeight, Bitmap.Config.ARGB_8888)
+                // 通过 Canvas 绘制的 Bitmap，View 必须要有背景色
+                view.draw(Canvas(bitmap))
+                bitmap
+            }
+            call.invoke(bitmap)
+        }
+    }
+
+    @JvmStatic
+    fun saveBitmapToFile(bitmap: Bitmap, filePath: String): Boolean {
         if (filePath.isEmpty()) {
-            ZToast.show("文件路径为空")
-            return
+            ZLog.e("filePath isEmpty")
+            return false
         }
         val file = File(filePath)
         try {
@@ -67,13 +85,19 @@ object ShotScreenUtils {
             FileOutputStream(file)
         } catch (e: Exception) {
             null
-        } ?: return
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutStream)
-        try {
+        }
+        if (fileOutStream == null) {
+            ZLog.e("fileOutStream is null")
+            return false
+        }
+        return try {
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutStream)
             fileOutStream.flush()
             fileOutStream.close()
+            true
         } catch (e: Exception) {
             ZLog.e(e)
+            false
         }
     }
 }
