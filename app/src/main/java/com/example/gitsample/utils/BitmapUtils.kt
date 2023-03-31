@@ -30,6 +30,9 @@ object BitmapUtils {
         val location = IntArray(2)
         view.getLocationInWindow(location)
         try {
+            // PixelCopy 会将屏幕上，指定区域内的所有控件都截取下来，生成Bitmap，类似于截屏
+            // Canvas 会将指定控件的展示内容，绘制在 Canvas 上，生成 Bitmap
+            // 若两个 View 叠加到一起，但是需要下面指定 View 的展示内容，应当用 Canvas 来截屏
             PixelCopy.request(
                 activity.window,
                 Rect(location[0], location[1], location[0] + view.width, location[1] + view.height),

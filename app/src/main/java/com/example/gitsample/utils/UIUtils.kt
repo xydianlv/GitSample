@@ -1,9 +1,8 @@
 package com.example.gitsample.utils
 
 import android.content.Context
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat.Type
 import kotlin.math.roundToInt
 
 object UIUtils {
@@ -40,8 +39,7 @@ object UIUtils {
         if (activity.window == null) {
             return
         }
-        val controller =
-            WindowCompat.getInsetsController(activity.window, activity.window.decorView)
-        controller.hide(Type.navigationBars())
+        activity.window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
     }
 }
