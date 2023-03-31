@@ -70,6 +70,20 @@
         <activity
             android:name=".system.file.ActivityFileManager"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".function.wallpaper.ActivityWallpaper"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".system.screen.ActivityScreenTest"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".system.screen.ActivityDarkActionBar"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".system.screen.ActivityNoActionBar"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

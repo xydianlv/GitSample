@@ -29,5 +29,7 @@
     <color name="color_lock_n">#FF007EE5</color>
     <!--解锁：失败-->
     <color name="color_lock_f">#FFFF0000</color>
+    <!--壁纸-->
+    <color name="color_wallpaper">#FFA39480</color>
 
 </resources>

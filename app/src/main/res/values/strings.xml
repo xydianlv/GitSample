@@ -14,4 +14,7 @@
     <string name="shot_screen_alert_scroll">点击右侧按钮，保存上面 ScrollView</string>
     <string name="shot_screen_click_scroll">ShotScrollView</string>
 
+    <string name="wallpaper_lock">设置锁屏</string>
+    <string name="wallpaper_wall">设置壁纸</string>
+
 </resources>

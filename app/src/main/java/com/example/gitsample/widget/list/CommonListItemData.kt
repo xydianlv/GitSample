@@ -4,6 +4,7 @@ import android.view.View.OnClickListener
 import com.example.gitsample.base.PageType
 import com.example.gitsample.system.file.FileShowType
 import com.example.gitsample.system.permission.PermissionItemType
+import com.example.gitsample.system.screen.ScreenType
 
 class CommonListItemData(
     val title: String,
@@ -28,6 +29,11 @@ class CommonListItemData(
 
         @JvmStatic
         fun buildData(type: PermissionItemType, listener: OnClickListener): CommonListItemData {
+            return CommonListItemData(type.title, type.info, null, 0, false, listener)
+        }
+
+        @JvmStatic
+        fun buildData(type: ScreenType, listener: OnClickListener): CommonListItemData {
             return CommonListItemData(type.title, type.info, null, 0, false, listener)
         }
     }
