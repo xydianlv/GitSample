@@ -15,7 +15,8 @@ enum class PageType(val title: String, val info: String) {
     SHOT_SCREEN("ShotScreen", "截屏"),
     WALLPAPER("Wallpaper", "设置锁屏/壁纸"),
     FLOAT_DRAG("FloatDrag", "悬浮图标自动靠边"),
-    SHOT_CUT("ShotCut", "桌面快捷方式"),
+    SHORTCUT("Shortcut", "桌面快捷方式"),
+    SHORTCUT_TARGET("ShortcutTarget", "桌面快捷方式"),
 
     // SYSTEM 下面的跳转界面
     PERMISSION("PermissionCheck", "权限申请"),

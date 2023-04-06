@@ -17,4 +17,8 @@
     <string name="wallpaper_lock">设置锁屏</string>
     <string name="wallpaper_wall">设置壁纸</string>
 
+    <string name="shortcut_alert_shortcut">点击Logo，添加桌面快捷方式</string>
+    <string name="shortcut_alert_dynamic">点击Logo，添加动态快捷方式</string>
+    <string name="shortcut_target_info">快捷方式打开页</string>
+
 </resources>

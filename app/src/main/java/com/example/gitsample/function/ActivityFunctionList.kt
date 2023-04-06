@@ -9,6 +9,7 @@ import com.example.gitsample.databinding.ActivityFunctionListBinding
 import com.example.gitsample.function.lock.finger.ActivityFingerLock
 import com.example.gitsample.function.lock.gesture.ActivityGestureLock
 import com.example.gitsample.function.screen.ActivityShotScreen
+import com.example.gitsample.function.shortcut.ActivityShortcut
 import com.example.gitsample.function.wallpaper.ActivityWallpaper
 import com.example.gitsample.widget.list.CommonListItemData
 
@@ -50,8 +51,8 @@ class ActivityFunctionList : BaseActivity() {
             ActivityWallpaper.open(this)
         }).addItem(CommonListItemData.buildData(PageType.FLOAT_DRAG) {
             ActivityFingerLock.open(this)
-        }).addItem(CommonListItemData.buildData(PageType.SHOT_CUT) {
-            ActivityFingerLock.open(this)
+        }).addItem(CommonListItemData.buildData(PageType.SHORTCUT) {
+            ActivityShortcut.open(this)
         }).refreshList()
     }
 }

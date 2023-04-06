@@ -84,6 +84,21 @@
             android:name=".system.screen.ActivityNoActionBar"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".function.shortcut.ActivityShortcut"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".function.shortcut.ActivityShortcutTarget"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name=".function.shortcut.ShortcutReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.shortcut.core.try_create" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
