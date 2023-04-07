@@ -38,11 +38,11 @@ class ActivityCanvasList : BaseActivity() {
 
     private fun initList() {
         binding.list.addItem(CommonListItemData.buildData(PageType.CANVAS_FIGURE) {
-
+            ActivityCanvasShow.open(this, PageType.CANVAS_FIGURE)
         }).addItem(CommonListItemData.buildData(PageType.CANVAS_TEXT) {
-
+            ActivityCanvasShow.open(this, PageType.CANVAS_TEXT)
         }).addItem(CommonListItemData.buildData(PageType.CANVAS_PATH) {
-
+            ActivityCanvasShow.open(this, PageType.CANVAS_PATH)
         }).addItem(CommonListItemData.buildData(PageType.CANVAS_IMAGE) {
 
         }).addItem(CommonListItemData.buildData(PageType.CANVAS_X_FER_MODE) {

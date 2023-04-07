@@ -96,6 +96,9 @@
         <activity
             android:name=".canvas.ActivityCanvasList"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".canvas.ActivityCanvasShow"
+            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".function.shortcut.ShortcutReceiver"

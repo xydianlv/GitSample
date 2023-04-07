@@ -5,6 +5,7 @@ import com.example.gitsample.base.BaseActivity
 import com.example.gitsample.databinding.ActivityMainBinding
 import com.example.gitsample.function.ActivityFunctionList
 import com.example.gitsample.base.PageType
+import com.example.gitsample.canvas.ActivityCanvasList
 import com.example.gitsample.system.ActivitySystemList
 import com.example.gitsample.widget.list.CommonListItemData
 
@@ -33,7 +34,7 @@ class MainActivity : BaseActivity() {
         binding.mainList.addItem(CommonListItemData.buildData(PageType.SYSTEM) {
             ActivitySystemList.open(this)
         }).addItem(CommonListItemData.buildData(PageType.CANVAS) {
-
+            ActivityCanvasList.open(this)
         }).addItem(CommonListItemData.buildData(PageType.FUNCTION) {
             ActivityFunctionList.open(this)
         }).refreshList()
