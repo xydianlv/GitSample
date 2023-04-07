@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.gitsample.R
-import com.example.gitsample.databinding.ActionNoActionBarBinding
+import com.example.gitsample.databinding.ActivityNoActionBarBinding
 import com.example.gitsample.utils.UIUtils
 
 class ActivityNoActionBar : AppCompatActivity() {
@@ -27,11 +27,11 @@ class ActivityNoActionBar : AppCompatActivity() {
         }
     }
 
-    private lateinit var binding: ActionNoActionBarBinding
+    private lateinit var binding: ActivityNoActionBarBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActionNoActionBarBinding.inflate(layoutInflater)
+        binding = ActivityNoActionBarBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         initActivity()
