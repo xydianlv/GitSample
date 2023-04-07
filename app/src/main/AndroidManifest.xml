@@ -90,6 +90,9 @@
         <activity
             android:name=".function.shortcut.ActivityShortcutTarget"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".function.drag.ActivityFloatDrag"
+            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".function.shortcut.ShortcutReceiver"

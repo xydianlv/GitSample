@@ -21,4 +21,6 @@
     <string name="shortcut_alert_dynamic">点击Logo，添加动态快捷方式</string>
     <string name="shortcut_target_info">快捷方式打开页</string>
 
+    <string name="float_drag_alert">拖动切图控件，自动停靠在距离更近的侧边</string>
+
 </resources>

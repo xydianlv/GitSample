@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.example.gitsample.base.BaseActivity
 import com.example.gitsample.base.PageType
 import com.example.gitsample.databinding.ActivityFunctionListBinding
-import com.example.gitsample.function.lock.finger.ActivityFingerLock
+import com.example.gitsample.function.drag.ActivityFloatDrag
 import com.example.gitsample.function.lock.gesture.ActivityGestureLock
 import com.example.gitsample.function.screen.ActivityShotScreen
 import com.example.gitsample.function.shortcut.ActivityShortcut
@@ -50,7 +50,7 @@ class ActivityFunctionList : BaseActivity() {
         }).addItem(CommonListItemData.buildData(PageType.WALLPAPER) {
             ActivityWallpaper.open(this)
         }).addItem(CommonListItemData.buildData(PageType.FLOAT_DRAG) {
-            ActivityFingerLock.open(this)
+            ActivityFloatDrag.open(this)
         }).addItem(CommonListItemData.buildData(PageType.SHORTCUT) {
             ActivityShortcut.open(this)
         }).refreshList()
