@@ -33,7 +33,7 @@ open class BaseActivity : AppCompatActivity() {
     /**
      * 设置状态栏展示模式，同时设置状态栏文字颜色
      *
-     * true  - 日渐模式，文字为黑色
+     * true  - 日间模式，文字为黑色
      * false - 暗黑模式，文字为白色
      */
     open fun isLightStatusBar(): Boolean {

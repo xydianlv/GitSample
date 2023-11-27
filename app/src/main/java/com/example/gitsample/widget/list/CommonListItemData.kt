@@ -18,6 +18,11 @@ class CommonListItemData(
     companion object {
 
         @JvmStatic
+        fun buildData(title: String, info: String, listener: OnClickListener): CommonListItemData {
+            return CommonListItemData(title, info, null, 0, true, listener)
+        }
+
+        @JvmStatic
         fun buildData(type: PageType, listener: OnClickListener): CommonListItemData {
             return CommonListItemData(type.title, type.info, null, 0, true, listener)
         }

@@ -7,6 +7,7 @@ import com.example.gitsample.function.ActivityFunctionList
 import com.example.gitsample.base.PageType
 import com.example.gitsample.canvas.ActivityCanvasList
 import com.example.gitsample.system.ActivitySystemList
+import com.example.gitsample.widget.ActivityWidgetList
 import com.example.gitsample.widget.list.CommonListItemData
 
 class MainActivity : BaseActivity() {
@@ -37,6 +38,8 @@ class MainActivity : BaseActivity() {
             ActivityCanvasList.open(this)
         }).addItem(CommonListItemData.buildData(PageType.FUNCTION) {
             ActivityFunctionList.open(this)
+        }).addItem(CommonListItemData.buildData(PageType.WIDGET) {
+            ActivityWidgetList.open(this)
         }).refreshList()
     }
 }

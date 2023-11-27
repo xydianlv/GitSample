@@ -5,9 +5,10 @@ enum class PageType(val title: String, val info: String) {
     MAIN("MainTest", "主界面"),
 
     // MAIN 下面的跳转界面
+    WIDGET("WidgetList", "一些可复用的自定义控件"),
     FUNCTION("FunctionList", "一些好玩的小功能"),
     CANVAS("CanvasList", "Canvas绘制方法收集"),
-    SYSTEM("SystemList", "系统属性和接口实现"),
+    SYSTEM("SystemList", "系统提供的一些属性和接口实现"),
 
     // SYSTEM 下面的跳转界面
     PERMISSION("PermissionCheck", "权限申请"),
@@ -29,4 +30,7 @@ enum class PageType(val title: String, val info: String) {
     FLOAT_DRAG("FloatDrag", "悬浮图标自动靠边"),
     SHORTCUT("Shortcut", "桌面快捷方式"),
     SHORTCUT_TARGET("ShortcutTarget", "桌面快捷方式"),
+
+    // WIDGET 下面的跳转界面
+    DIALOG("MyDialog", "自定义Dialog"),
 }
