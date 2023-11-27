@@ -5,7 +5,8 @@ import androidx.annotation.IntDef
 @IntDef(
     AppInitModule.ALL,
     AppInitModule.MAIN,
-    AppInitModule.UI
+    AppInitModule.UI,
+    AppInitModule.ANALYTIC
 )
 annotation class AppInitModule {
 
@@ -16,5 +17,7 @@ annotation class AppInitModule {
         const val MAIN = 1
 
         const val UI = 2
+
+        const val ANALYTIC = 3
     }
 }

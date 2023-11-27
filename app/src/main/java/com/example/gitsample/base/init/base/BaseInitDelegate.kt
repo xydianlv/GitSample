@@ -7,8 +7,8 @@ import android.os.Message
 import androidx.annotation.WorkerThread
 import com.example.gitsample.base.AnalyticManager
 import com.example.gitsample.base.init.AppInitEngine
-import com.example.gitsample.base.init.AppLaunchThreadPool
-import com.example.gitsample.base.init.AppStartLog
+import com.example.gitsample.base.init.utils.AppLaunchThreadPool
+import com.example.gitsample.base.init.utils.AppStartLog
 import com.example.gitsample.utils.ZLog
 
 abstract class BaseInitDelegate : IInitDelegate {

@@ -1,5 +1,6 @@
-package com.example.gitsample.base.init
+package com.example.gitsample.base.init.utils
 
+import com.example.gitsample.base.init.AppInitModule
 import com.example.gitsample.utils.ZLog
 
 object AppStartLog {

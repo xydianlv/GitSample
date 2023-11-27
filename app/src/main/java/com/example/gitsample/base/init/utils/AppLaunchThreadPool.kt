@@ -1,4 +1,4 @@
-package com.example.gitsample.base.init
+package com.example.gitsample.base.init.utils
 
 import com.example.gitsample.utils.ZLog
 import java.util.concurrent.ExecutorService
