@@ -17,11 +17,13 @@ class AnalyticManager private constructor() {
     }
 
     private var weakReferenceActivity: WeakReference<Activity>? = null
-    private var appContext: Context? = null
+    private var application: Application? = null
+    private var processData: Int = -1
 
     fun initManager(app: Application) {
-        appContext = app.baseContext
-        app.registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
+        application = app
+        app.registerActivityLifecycleCallbacks(object :
+            Application.ActivityLifecycleCallbacks {
             override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
             }
 
@@ -46,11 +48,23 @@ class AnalyticManager private constructor() {
         })
     }
 
+    fun isMainProcess(): Boolean {
+        if (processData == -1) {
+            val packageName = appContext()?.packageName
+            val processName = application
+        }
+        return processData == 1
+    }
+
     fun currentActivity(): Activity? {
         return weakReferenceActivity?.get()
     }
 
+    fun application(): Application? {
+        return application
+    }
+
     fun appContext(): Context? {
-        return appContext
+        return application?.baseContext
     }
 }

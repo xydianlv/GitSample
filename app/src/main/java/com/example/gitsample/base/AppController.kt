@@ -1,7 +1,7 @@
 package com.example.gitsample.base
 
 import android.app.Application
-import com.example.gitsample.utils.UIUtils
+import com.example.gitsample.base.init.AppInitDelegate
 
 class AppController : Application() {
 
@@ -11,7 +11,7 @@ class AppController : Application() {
     }
 
     private fun init() {
-        UIUtils.init(baseContext)
         AnalyticManager.manager.initManager(this)
+        AppInitDelegate.init()
     }
 }
