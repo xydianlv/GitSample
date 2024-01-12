@@ -7,6 +7,7 @@ import com.example.gitsample.base.BaseActivity
 import com.example.gitsample.base.PageType
 import com.example.gitsample.databinding.ActivitySystemListBinding
 import com.example.gitsample.system.file.ActivityFileManager
+import com.example.gitsample.system.info.ActivitySystemInfo
 import com.example.gitsample.system.permission.ActivityPermissionCheck
 import com.example.gitsample.system.screen.ActivityScreenTest
 import com.example.gitsample.widget.list.CommonListItemData
@@ -46,6 +47,8 @@ class ActivitySystemList : BaseActivity() {
             ActivityFileManager.open(this)
         }).addItem(CommonListItemData.buildData(PageType.SCREEN_TEST) {
             ActivityScreenTest.open(this)
+        }).addItem(CommonListItemData.buildData(PageType.SYSTEM_INFO) {
+            ActivitySystemInfo.open(this)
         }).refreshList()
     }
 }

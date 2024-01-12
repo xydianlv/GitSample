@@ -14,6 +14,7 @@ enum class PageType(val title: String, val info: String) {
     PERMISSION("PermissionCheck", "权限申请"),
     FILE_MANAGER("FileManager", "文件管理"),
     SCREEN_TEST("ScreenTest", "屏幕展示样式，状态栏、全屏等"),
+    SYSTEM_INFO("SystemInfo", "手机相关的所有信息"),
 
     // SYSTEM 下面的跳转界面
     CANVAS_FIGURE("CanvasFigure", "Canvas 绘制几何形状"),

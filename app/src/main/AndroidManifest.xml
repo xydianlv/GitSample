@@ -77,6 +77,9 @@
             android:name=".system.screen.ActivityScreenTest"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".system.info.ActivitySystemInfo"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".system.screen.ActivityDarkActionBar"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
