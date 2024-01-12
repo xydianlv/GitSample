@@ -1,7 +1,7 @@
 package com.example.gitsample.system.file
 
 import android.os.Environment
-import com.example.gitsample.base.AnalyticManager
+import com.example.gitsample.base.module.AnalyticManager
 import com.example.gitsample.base.Constants
 import java.io.File
 

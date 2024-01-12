@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="72.0dp"
+    android:layout_height="72.0dp"
+    android:layoutAnimation="@anim/layout_kun_25_1800">
+
+    <ImageView
+        android:id="@+id/bubble_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/image"
+        android:src="@mipmap/img_kun_bubble_prize" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bubble_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/img_kun_prize"
+        android:visibility="invisible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bubble_alpha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.5"
+        android:src="@mipmap/img_kun_prize"
+        android:visibility="invisible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/bubble_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:lineSpacingMultiplier="0.7"
+        android:textColor="@color/color_df2f2f"
+        android:textSize="18.0sp" />
+
+</FrameLayout>

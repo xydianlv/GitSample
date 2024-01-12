@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.example.gitsample.base.init.AppInitDelegate
 import com.example.gitsample.base.init.utils.AppLaunchChecker
+import com.example.gitsample.base.module.AnalyticManager
 
 class AppController : Application() {
 

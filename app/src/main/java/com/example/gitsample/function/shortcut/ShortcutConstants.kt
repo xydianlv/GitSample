@@ -19,4 +19,9 @@ object ShortcutConstants {
 
     const val DYNAMIC_NAME = "GitSampleDynamic"
     const val DYNAMIC_ID = "1002"
+
+    const val PERMISSION_DENIED = -1
+    const val PERMISSION_GRANTED = 0
+    const val PERMISSION_ASK = 1
+    const val PERMISSION_UNKNOWN = 2
 }

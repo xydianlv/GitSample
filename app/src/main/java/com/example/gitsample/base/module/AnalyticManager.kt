@@ -1,4 +1,4 @@
-package com.example.gitsample.base
+package com.example.gitsample.base.module
 
 import android.app.Activity
 import android.app.Application

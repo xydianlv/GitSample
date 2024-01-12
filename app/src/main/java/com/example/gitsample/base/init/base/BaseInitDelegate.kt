@@ -5,7 +5,7 @@ import android.os.Handler
 import android.os.Looper
 import android.os.Message
 import androidx.annotation.WorkerThread
-import com.example.gitsample.base.AnalyticManager
+import com.example.gitsample.base.module.AnalyticManager
 import com.example.gitsample.base.init.AppInitEngine
 import com.example.gitsample.base.init.utils.AppLaunchThreadPool
 import com.example.gitsample.base.init.utils.AppStartLog

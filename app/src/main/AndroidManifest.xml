@@ -117,6 +117,33 @@
                 <action android:name="com.shortcut.core.try_create" />
             </intent-filter>
         </receiver>
+        <receiver
+            android:name=".function.appwidget.provider.KunWidgetProviderSmall"
+            android:exported="true"
+            android:label="桌面鲲组件">
+            <intent-filter>
+                <!-- 接收系统事件，例如生命周期等-->
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <!--声明appwidget的信息-->
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_kun_widget_small" />
+        </receiver>
+        <receiver
+            android:name=".function.appwidget.provider.KunWidgetProviderBig"
+            android:exported="true"
+            android:label="桌面鲲组件">
+            <intent-filter>
+                <!-- 接收系统事件，例如生命周期等-->
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <!--声明appwidget的信息-->
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_kun_widget_big" />
+        </receiver>
+
     </application>
 
 </manifest>

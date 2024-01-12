@@ -32,4 +32,8 @@
     <!--壁纸-->
     <color name="color_wallpaper">#FFA39480</color>
 
+    <color name="color_a6171c">#a6171c</color>
+    <color name="color_d25d5d">#d25d5d</color>
+    <color name="color_df2f2f">#df2f2f</color>
+
 </resources>

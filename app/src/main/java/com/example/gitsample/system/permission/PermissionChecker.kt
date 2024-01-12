@@ -2,7 +2,7 @@ package com.example.gitsample.system.permission
 
 import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
-import com.example.gitsample.base.AnalyticManager
+import com.example.gitsample.base.module.AnalyticManager
 
 object PermissionChecker {
 

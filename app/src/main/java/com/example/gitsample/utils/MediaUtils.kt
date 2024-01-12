@@ -7,7 +7,7 @@ import android.os.Build
 import android.os.Environment
 import android.provider.MediaStore
 import android.text.TextUtils
-import com.example.gitsample.base.AnalyticManager
+import com.example.gitsample.base.module.AnalyticManager
 import com.example.gitsample.system.file.FileType
 import java.io.File
 import java.io.OutputStream

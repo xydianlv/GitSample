@@ -1,7 +1,7 @@
 package com.example.gitsample.utils
 
 import android.widget.Toast
-import com.example.gitsample.base.AnalyticManager
+import com.example.gitsample.base.module.AnalyticManager
 import java.lang.ref.WeakReference
 
 object ZToast {

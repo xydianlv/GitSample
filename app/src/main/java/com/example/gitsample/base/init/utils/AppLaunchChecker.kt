@@ -3,7 +3,7 @@ package com.example.gitsample.base.init.utils
 import android.os.Handler
 import android.os.Message
 import android.util.Log
-import com.example.gitsample.base.AnalyticManager
+import com.example.gitsample.base.module.AnalyticManager
 import com.example.gitsample.base.init.AppInitEngine
 import com.example.gitsample.base.init.AppInitModule
 import com.example.gitsample.base.init.AppModuleInitCallback
