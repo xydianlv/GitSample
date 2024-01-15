@@ -108,6 +108,9 @@
         <activity
             android:name=".widget.ActivityWidgetList"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".function.appwidget.ActivityAppWidgetTest"
+            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".function.shortcut.ShortcutReceiver"

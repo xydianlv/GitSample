@@ -25,4 +25,9 @@
 
     <string name="float_drag_alert">拖动切图控件，自动停靠在距离更近的侧边</string>
 
+    <string name="app_widget_small_preview_alert">点击上面组件预览图，添加 2*2 桌面组件</string>
+    <string name="app_widget_big_preview_alert">点击上面组件预览图，添加 2*4 桌面组件</string>
+    <string name="app_widget_refresh_alert">点击右侧按钮，刷新组件数据</string>
+    <string name="app_widget_refresh">Refresh</string>
+
 </resources>

@@ -5,9 +5,10 @@
     android:layout_width="330.0dp"
     android:layout_height="155.0dp">
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:contentDescription="@string/image"
         android:scaleType="centerCrop"
         android:src="@mipmap/img_kun_widget_bg_big" />
 
@@ -19,10 +20,11 @@
         android:layout_marginEnd="2.0dp"
         android:layoutAnimation="@anim/layout_kun_25_2000">
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <ImageView
             android:id="@+id/img_kun"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:contentDescription="@string/image"
             android:scaleType="centerInside" />
 
     </FrameLayout>
@@ -35,7 +37,7 @@
         android:paddingTop="12.0dp"
         android:paddingEnd="0.0dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:id="@+id/level"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,7 +46,7 @@
             android:textStyle="bold"
             tools:ignore="SpUsage" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:id="@+id/length"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

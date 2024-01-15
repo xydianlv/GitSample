@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.example.gitsample.base.BaseActivity
 import com.example.gitsample.base.PageType
 import com.example.gitsample.databinding.ActivityFunctionListBinding
+import com.example.gitsample.function.appwidget.ActivityAppWidgetTest
 import com.example.gitsample.function.drag.ActivityFloatDrag
 import com.example.gitsample.function.lock.gesture.ActivityGestureLock
 import com.example.gitsample.function.screen.ActivityShotScreen
@@ -53,6 +54,8 @@ class ActivityFunctionList : BaseActivity() {
             ActivityFloatDrag.open(this)
         }).addItem(CommonListItemData.buildData(PageType.SHORTCUT) {
             ActivityShortcut.open(this)
+        }).addItem(CommonListItemData.buildData(PageType.APP_WIDGET) {
+            ActivityAppWidgetTest.open(this)
         }).refreshList()
     }
 }

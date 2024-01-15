@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.gitsample.widget.common.CommonToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_toolbar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/preview_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_14"
+        android:layout_marginTop="@dimen/padding_14"
+        android:src="@mipmap/img_kun_wight_preview_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/alert_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_14"
+        android:text="@string/app_widget_small_preview_alert"
+        android:textColor="@color/ct_3"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintStart_toStartOf="@id/preview_small"
+        app:layout_constraintTop_toBottomOf="@id/preview_small" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/preview_big"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_14"
+        android:layout_marginTop="@dimen/padding_14"
+        android:src="@mipmap/img_kun_wight_preview_big"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/alert_small" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/alert_big"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_14"
+        android:text="@string/app_widget_big_preview_alert"
+        android:textColor="@color/ct_3"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintStart_toStartOf="@id/preview_big"
+        app:layout_constraintTop_toBottomOf="@id/preview_big" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/refresh_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_14"
+        android:text="@string/app_widget_refresh_alert"
+        android:textColor="@color/ct_3"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintStart_toStartOf="@id/alert_big"
+        app:layout_constraintTop_toBottomOf="@id/alert_big" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/padding_14"
+        android:text="@string/app_widget_refresh"
+        android:textColor="@color/color_alert"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintBottom_toBottomOf="@id/refresh_alert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/refresh_alert" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/padding_14"
+        android:layout_marginTop="@dimen/padding_14"
+        android:layout_marginBottom="@dimen/padding_14"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/refresh_alert">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/log_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.3"
+            android:textColor="@color/ct_3"
+            android:textSize="@dimen/text_12" />
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

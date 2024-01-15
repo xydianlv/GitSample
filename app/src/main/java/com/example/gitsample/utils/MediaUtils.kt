@@ -81,7 +81,7 @@ object MediaUtils {
         var outputStream: OutputStream? = null
         try {
             outputStream = context.contentResolver.openOutputStream(uri)
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream!!)
             contentValues.clear()
             contentValues.put(MediaStore.Images.Media.IS_PENDING, 0)
             context.contentResolver.update(uri, contentValues, null, null)

@@ -38,33 +38,33 @@ class CanvasTextView : View {
         paint.textAlign = Paint.Align.LEFT
     }
 
-    override fun draw(canvas: Canvas?) {
+    override fun draw(canvas: Canvas) {
         super.draw(canvas)
 
         refreshArray(0)
         // 提示线的色值
         paint.color = ContextCompat.getColor(context, com.example.gitsample.R.color.color_alert)
         // 绘制第一行文字的基准线（起点坐标X，起点坐标Y，终点坐标X，终点坐标Y，画笔）
-        canvas?.drawLine(array[0], array[1], array[0] + halfScreen, array[1], paint)
+        canvas.drawLine(array[0], array[1], array[0] + halfScreen, array[1], paint)
 
         // 文字色值
         paint.color = ContextCompat.getColor(context, com.example.gitsample.R.color.ct_1)
         // 画笔风格，空心
         paint.style = Paint.Style.STROKE
         // 绘制一段空心文字（绘制的文案，基准点坐标X，基准点坐标Y，画笔），基准点位于文字的左下角
-        canvas?.drawText("PaintStroke", array[0], array[1], paint)
+        canvas.drawText("PaintStroke", array[0], array[1], paint)
 
         refreshArray(1)
         // 画笔风格，实心
         paint.style = Paint.Style.FILL
         // 绘制一段实心文字
-        canvas?.drawText("PaintFill", array[0], array[1], paint)
+        canvas.drawText("PaintFill", array[0], array[1], paint)
 
         refreshArray(2)
         // 画笔风格，含边框的实心
         paint.style = Paint.Style.FILL_AND_STROKE
         // 绘制一段实心带边框的文字
-        canvas?.drawText("PaintAll", array[0], array[1], paint)
+        canvas.drawText("PaintAll", array[0], array[1], paint)
 
         refreshArray(3)
         // 画笔风格，实心
@@ -72,7 +72,7 @@ class CanvasTextView : View {
         // 设置粗体
         paint.isFakeBoldText = true
         // 绘制一段实心粗体的文字
-        canvas?.drawText("PaintFillBold", array[0], array[1], paint)
+        canvas.drawText("PaintFillBold", array[0], array[1], paint)
 
         refreshArray(4)
         // 设置粗体
@@ -80,7 +80,7 @@ class CanvasTextView : View {
         // 设置带下划线
         paint.isUnderlineText = true
         // 绘制一段带下划线的实心文字
-        canvas?.drawText("PaintFillWithUnderLine", array[0], array[1], paint)
+        canvas.drawText("PaintFillWithUnderLine", array[0], array[1], paint)
 
         refreshArray(5)
         // 设置带下划线
@@ -88,7 +88,7 @@ class CanvasTextView : View {
         // 设置带倾斜角度
         paint.textSkewX = -0.25f
         // 绘制一段倾斜的实心文字
-        canvas?.drawText("PaintFillWithSkew", array[0], array[1], paint)
+        canvas.drawText("PaintFillWithSkew", array[0], array[1], paint)
 
         refreshArray(6)
         // 设置带倾斜角度
@@ -96,7 +96,7 @@ class CanvasTextView : View {
         // 设置是否带删除线
         paint.isStrikeThruText = true
         // 绘制一段带删除线的实心文字
-        canvas?.drawText("PaintFillWidthDeleteLine", array[0], array[1], paint)
+        canvas.drawText("PaintFillWidthDeleteLine", array[0], array[1], paint)
     }
 
     private fun refreshArray(index: Int) {

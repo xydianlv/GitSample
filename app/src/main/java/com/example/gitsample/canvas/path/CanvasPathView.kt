@@ -39,7 +39,7 @@ class CanvasPathView : View {
         paint.color = ContextCompat.getColor(context, com.example.gitsample.R.color.ct_1)
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
         paint.style = Paint.Style.STROKE
@@ -48,25 +48,25 @@ class CanvasPathView : View {
         path.moveTo(array[0], array[1])
         path.lineTo(array[0] + sizeWidth, array[1])
         // 画一条直线（路径，画笔）
-        canvas?.drawPath(path, paint)
+        canvas.drawPath(path, paint)
 
         refreshArray(1)
         path.moveTo(array[0], array[1])
         path.lineTo(array[0] + sizeWidth, array[1] + sizeDivide / 2)
         // 画一条直线（路径，画笔）
-        canvas?.drawPath(path, paint)
+        canvas.drawPath(path, paint)
 
         refreshArray(2)
         rect.set(array[0], array[1], array[0] + sizeWidth, array[1] + sizeDivide)
         path.addRect(rect, Path.Direction.CW)
         // 画一个框框（路径，画笔）
-        canvas?.drawPath(path, paint)
+        canvas.drawPath(path, paint)
 
         refreshArray(4)
         rect.set(array[0], array[1], array[0] + sizeWidth, array[1] + sizeDivide)
         path.addRect(rect, Path.Direction.CCW)
         // 画一个框框（路径，画笔）
-        canvas?.drawPath(path, paint)
+        canvas.drawPath(path, paint)
 
         paint.style = Paint.Style.FILL_AND_STROKE
 
@@ -74,13 +74,13 @@ class CanvasPathView : View {
         rect.set(array[0], array[1], array[0] + sizeWidth, array[1] + sizeDivide)
         path.addRect(rect, Path.Direction.CCW)
         // 画一个框框（路径，画笔）
-        canvas?.drawPath(path, paint)
+        canvas.drawPath(path, paint)
 
         refreshArray(8)
         rect.set(array[0], array[1], array[0] + sizeWidth, array[1] + sizeDivide)
         path.addRect(rect, Path.Direction.CCW)
         // 画一个框框（路径，画笔）
-        canvas?.drawPath(path, paint)
+        canvas.drawPath(path, paint)
     }
 
     private fun refreshArray(index: Int) {

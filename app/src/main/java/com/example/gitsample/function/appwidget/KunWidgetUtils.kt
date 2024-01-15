@@ -25,9 +25,17 @@ object KunWidgetUtils {
     const val KEY_HANDLE_UPDATE_LOAD = "key_handle_update_load"
     const val KEY_HANDLE_UPDATE = "key_handle_update"
 
+    private var logListener: OnWidgetLogListener? = null
+
     @JvmStatic
     fun onLog(logInfo: String) {
         ZLog.d(LOG_TAG, logInfo)
+        logListener?.onLog(logInfo)
+    }
+
+    @JvmStatic
+    fun registerLogListener(logListener: OnWidgetLogListener?) {
+        KunWidgetUtils.logListener = logListener
     }
 
     @JvmStatic
@@ -41,7 +49,7 @@ object KunWidgetUtils {
                         call.invoke(addKunWidget(context, widgetName))
                     }
                     KunWidgetType.KUN_WIDGET_BIG -> {
-                        val widgetName = ComponentName(context, KunWidgetProviderSmall::class.java)
+                        val widgetName = ComponentName(context, KunWidgetProviderBig::class.java)
                         call.invoke(addKunWidget(context, widgetName))
                     }
                 }

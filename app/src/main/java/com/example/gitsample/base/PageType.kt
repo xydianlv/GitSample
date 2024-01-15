@@ -30,7 +30,8 @@ enum class PageType(val title: String, val info: String) {
     WALLPAPER("Wallpaper", "设置锁屏/壁纸"),
     FLOAT_DRAG("FloatDrag", "悬浮图标自动靠边"),
     SHORTCUT("Shortcut", "桌面快捷方式"),
-    SHORTCUT_TARGET("ShortcutTarget", "桌面快捷方式"),
+    SHORTCUT_TARGET("ShortcutTarget", "桌面快捷方式跳转界面"),
+    APP_WIDGET("AppWidgetTest", "桌面组件"),
 
     // WIDGET 下面的跳转界面
     DIALOG("MyDialog", "自定义Dialog"),
