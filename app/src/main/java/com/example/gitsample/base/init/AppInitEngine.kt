@@ -1,7 +1,6 @@
 package com.example.gitsample.base.init
 
 import com.example.gitsample.base.init.base.IInitDelegate
-import com.example.gitsample.base.init.utils.AppLaunchThreadPool
 import com.example.gitsample.base.init.utils.AppStartLog
 
 enum class AppInitEngine {
@@ -12,7 +11,6 @@ enum class AppInitEngine {
     private val mainList: ArrayList<IInitDelegate> = ArrayList()
 
     private val delegateMap: HashMap<Int, IInitDelegate> = HashMap()
-    private var onClear: Boolean = false
 
     // 分组并行处理，每一组模块儿并行初始化结束后，进入下一组模块儿初始化
     // 往 group 中添加 delegate 顺序遵循：无依赖模块儿的尽量靠前
@@ -122,9 +120,6 @@ enum class AppInitEngine {
         linkMap[module]?.forEach {
             delegateMap[it]?.onLinkModuleInit(module)
         }
-        if (onClear) {
-            checkClear()
-        }
     }
 
     fun checkInit(@AppInitModule module: Int, callback: AppModuleInitCallback) {
@@ -135,19 +130,6 @@ enum class AppInitEngine {
                 callbackMap[module] = ArrayList()
             }
             callbackMap[module]!!.add(callback)
-        }
-    }
-
-    fun checkClear() {
-        onClear = true
-        var initCount = 0
-        delegateMap.forEach { entity ->
-            if (entity.value.onInitFinish()) {
-                initCount++
-            }
-        }
-        if (initCount == delegateMap.size) {
-            AppLaunchThreadPool.shutDown()
         }
     }
 }
