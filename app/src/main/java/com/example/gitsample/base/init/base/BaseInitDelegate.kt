@@ -1,47 +1,17 @@
 package com.example.gitsample.base.init.base
 
 import android.app.Application
-import android.os.Handler
 import android.os.Looper
-import android.os.Message
 import androidx.annotation.WorkerThread
 import com.example.gitsample.base.module.AnalyticManager
 import com.example.gitsample.base.init.AppInitEngine
-import com.example.gitsample.base.init.utils.AppLaunchThreadPool
 import com.example.gitsample.base.init.utils.AppStartLog
-import com.example.gitsample.utils.ZLog
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 abstract class BaseInitDelegate : IInitDelegate {
-
-    companion object {
-        private const val MSG_INIT_ERROR: Int = -1
-    }
-
-    private val handler: Handler = Handler(Looper.getMainLooper(), object : Handler.Callback {
-        override fun handleMessage(msg: Message): Boolean {
-            if (msg.what == getModule()) {
-                onInitFinish = true
-                onInit = false
-
-                val divideTime = System.currentTimeMillis() - startTime
-                val logInfo =
-                    AppStartLog.name(getModule()) + " init finish -> divideTime : " + divideTime
-                AppStartLog.onLog(0, logInfo)
-
-                AppInitEngine.INSTANCE.onInitFinish(getModule())
-                return true
-            }
-            if (msg.what == MSG_INIT_ERROR) {
-                onInit = false
-
-                val divideTime = System.currentTimeMillis() - startTime
-                val logInfo =
-                    AppStartLog.name(getModule()) + " init error -> divideTime : " + divideTime
-                AppStartLog.onLog(0, logInfo)
-            }
-            return false
-        }
-    })
 
     private val linkModuleMap: HashMap<Int, Boolean> = HashMap()
     private var onInitFinish: Boolean = false
@@ -74,6 +44,9 @@ abstract class BaseInitDelegate : IInitDelegate {
     }
 
     override fun onLinkModuleInit(module: Int) {
+        if (linkModuleMap.size != getLinkModuleArray().size) {
+            initValue()
+        }
         linkModuleMap[module] = true
         initModule()
     }
@@ -84,14 +57,6 @@ abstract class BaseInitDelegate : IInitDelegate {
 
     @WorkerThread
     abstract fun doInit(application: Application)
-
-    private fun baseInit(application: Application?) {
-        if (application == null) {
-            throw Exception("application is null")
-        } else {
-            doInit(application)
-        }
-    }
 
     private fun initValue() {
         getLinkModuleArray().forEach { module ->
@@ -121,35 +86,67 @@ abstract class BaseInitDelegate : IInitDelegate {
         if (onMainThread()) {
             try {
                 AppStartLog.onLog(0, AppStartLog.name(getModule()))
-                baseInit(AnalyticManager.manager.application())
-                handler.sendEmptyMessage(getModule())
+                val application = AnalyticManager.manager.application()
+                if (application == null) {
+                    onInitError(Exception("Init Failure : application is null"))
+                } else {
+                    doInit(application)
+                    onInitSuccess()
+                }
             } catch (e: Exception) {
                 if (needCrashInit()) {
                     throw Exception("Init Failure : $e")
                 } else {
-                    handler.sendEmptyMessage(MSG_INIT_ERROR)
-                    ZLog.e(e)
+                    onInitError(e)
                 }
             }
         } else {
-            AppLaunchThreadPool.get().execute {
-                try {
-                    if (needPrepareLooper()) {
-                        Looper.prepare()
+            CoroutineScope(Dispatchers.Main).launch {
+                AppStartLog.onLog(0, AppStartLog.name(getModule()))
+                val application = AnalyticManager.manager.application()
+                val result = if (application == null) {
+                    Exception("Init Failure : application is null")
+                } else {
+                    withContext(Dispatchers.IO) {
+                        if (needPrepareLooper()) {
+                            Looper.prepare()
+                        }
+                        try {
+                            doInit(application)
+                            null
+                        } catch (e: Exception) {
+                            e
+                        }
                     }
-                    AppStartLog.onLog(0, AppStartLog.name(getModule()))
-                    baseInit(AnalyticManager.manager.application())
-                    handler.sendEmptyMessage(getModule())
-                } catch (e: Exception) {
-                    if (needCrashInit()) {
-                        throw Exception("Init Failure : $e")
-                    } else {
-                        handler.sendEmptyMessage(MSG_INIT_ERROR)
-                        ZLog.e(e)
-                    }
+                }
+                if (result == null) {
+                    onInitSuccess()
+                } else if (needCrashInit()) {
+                    throw Exception("Init Failure : $result")
+                } else {
+                    onInitError(result)
                 }
             }
         }
+    }
+
+    private fun onInitSuccess() {
+        onInitFinish = true
+        onInit = false
+
+        val divideTime = System.currentTimeMillis() - startTime
+        val logInfo = AppStartLog.name(getModule()) + " init finish -> divideTime : " + divideTime
+        AppStartLog.onLog(0, logInfo)
+
+        AppInitEngine.INSTANCE.onInitFinish(getModule())
+    }
+
+    private fun onInitError(e: Exception) {
+        onInit = false
+
+        val divideTime = System.currentTimeMillis() - startTime
+        val logInfo = AppStartLog.name(getModule()) + " init error -> divideTime : " + divideTime
+        AppStartLog.onLog(0, "$logInfo errorInfo : $e")
     }
 
     private fun checkInit(): Boolean {

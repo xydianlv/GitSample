@@ -15,6 +15,7 @@ enum class AppInitEngine {
     private var onClear: Boolean = false
 
     // 分组并行处理，每一组模块儿并行初始化结束后，进入下一组模块儿初始化
+    // 往 group 中添加 delegate 顺序遵循：无依赖模块儿的尽量靠前
     fun group(vararg delegateArray: IInitDelegate): AppInitEngine {
         val delegateList = ArrayList<IInitDelegate>()
         for (delegate in delegateArray) {
