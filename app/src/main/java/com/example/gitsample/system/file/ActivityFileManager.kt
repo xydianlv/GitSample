@@ -99,6 +99,6 @@ class ActivityFileManager : BaseActivity() {
 
     private fun getSystemDirectoryInfo(filePath: String): String {
         val fileSize = MemoryUtils.getMemorySize(filePath, false)
-        return filePath + MemoryUtils.memorySizeFormat(fileSize)
+        return filePath + "  " + MemoryUtils.memorySizeFormat(fileSize)
     }
 }
