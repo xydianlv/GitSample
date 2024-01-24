@@ -52,6 +52,7 @@ class AnalyticManager private constructor() {
         if (processData == -1) {
             val packageName = appContext()?.packageName
             val processName = application
+            processData = 1
         }
         return processData == 1
     }

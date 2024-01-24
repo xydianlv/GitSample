@@ -37,6 +37,15 @@ object AppStartLog {
             AppInitModule.ALL -> {
                 "all"
             }
+            AppInitModule.UI -> {
+                "UI"
+            }
+            AppInitModule.MAIN -> {
+                "MainCheck"
+            }
+            AppInitModule.ANALYTIC -> {
+                "Analytic"
+            }
             else -> {
                 "other"
             }

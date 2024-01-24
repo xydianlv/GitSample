@@ -33,7 +33,7 @@ object AppLaunchChecker {
     @JvmStatic
     fun check() {
         if (AnalyticManager.manager.isMainProcess()) {
-            checkOnMainProcess()
+            //checkOnMainProcess()
         }
     }
 

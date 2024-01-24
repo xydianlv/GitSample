@@ -19,6 +19,7 @@ abstract class BaseInitDelegate : IInitDelegate {
     private var startTime: Long = 0L
 
     override fun doInit() {
+        AppStartLog.onLog(0, AppStartLog.name(getModule()) + " doInit")
         initValue()
         initModule()
     }
@@ -85,7 +86,7 @@ abstract class BaseInitDelegate : IInitDelegate {
         this.startTime = System.currentTimeMillis()
         if (onMainThread()) {
             try {
-                AppStartLog.onLog(0, AppStartLog.name(getModule()))
+                AppStartLog.onLog(0, AppStartLog.name(getModule()) + " init on mainThread")
                 val application = AnalyticManager.manager.application()
                 if (application == null) {
                     onInitError(Exception("Init Failure : application is null"))
@@ -102,7 +103,7 @@ abstract class BaseInitDelegate : IInitDelegate {
             }
         } else {
             CoroutineScope(Dispatchers.Main).launch {
-                AppStartLog.onLog(0, AppStartLog.name(getModule()))
+                AppStartLog.onLog(0, AppStartLog.name(getModule()) + " init on childThread")
                 val application = AnalyticManager.manager.application()
                 val result = if (application == null) {
                     Exception("Init Failure : application is null")
