@@ -15,8 +15,9 @@ enum class PageType(val title: String, val info: String) {
     FILE_MANAGER("FileManager", "文件管理"),
     SCREEN_TEST("ScreenTest", "屏幕展示样式，状态栏、全屏等"),
     SYSTEM_INFO("SystemInfo", "手机相关的所有信息"),
+    KOTLIN_TEST("KotlinTest", "Kotlin 协程相关总结"),
 
-    // SYSTEM 下面的跳转界面
+    // CANVAS 下面的跳转界面
     CANVAS_FIGURE("CanvasFigure", "Canvas 绘制几何形状"),
     CANVAS_TEXT("CanvasText", "Canvas 绘制文字"),
     CANVAS_PATH("CanvasPath", "Canvas 绘制路径"),

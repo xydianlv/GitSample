@@ -30,4 +30,7 @@
     <string name="app_widget_refresh_alert">点击右侧按钮，刷新组件数据</string>
     <string name="app_widget_refresh">Refresh</string>
 
+    <string name="kotlin_test_alert">点击右侧按钮，运行上面 Kotlin 代码</string>
+    <string name="kotlin_test_run">Run</string>
+
 </resources>

@@ -32,8 +32,8 @@
         android:gravity="center_vertical"
         android:paddingHorizontal="@dimen/padding_14"
         android:text="@string/shot_screen_alert_image"
-        android:textColor="@color/ct_3"
-        android:textSize="@dimen/text_15"
+        android:textColor="@color/ct_2"
+        android:textSize="@dimen/text_12"
         app:layout_constraintTop_toBottomOf="@id/divide_0" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -44,7 +44,7 @@
         android:paddingHorizontal="@dimen/padding_14"
         android:text="@string/shot_screen_click_image"
         android:textColor="@color/color_alert"
-        android:textSize="@dimen/text_15"
+        android:textSize="@dimen/text_12"
         app:layout_constraintBottom_toTopOf="@id/divide_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/divide_0" />
@@ -123,8 +123,8 @@
         android:gravity="center_vertical"
         android:paddingHorizontal="@dimen/padding_14"
         android:text="@string/shot_screen_alert_scroll"
-        android:textColor="@color/ct_3"
-        android:textSize="@dimen/text_15"
+        android:textColor="@color/ct_2"
+        android:textSize="@dimen/text_12"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -135,7 +135,7 @@
         android:paddingHorizontal="@dimen/padding_14"
         android:text="@string/shot_screen_click_scroll"
         android:textColor="@color/color_alert"
-        android:textSize="@dimen/text_15"
+        android:textSize="@dimen/text_12"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/divide_2" />

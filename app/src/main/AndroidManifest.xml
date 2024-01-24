@@ -3,12 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!-- 文件读取权限 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
     <!-- 位置定位权限 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /><!-- 近似位置 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /><!-- 精确位置 -->
     <!-- 摄像头权限 -->
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
     <!-- 麦克风权限 -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <!-- 壁纸权限 -->
@@ -110,6 +113,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".function.appwidget.ActivityAppWidgetTest"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".system.kotlin.ActivityKotlinTest"
             android:screenOrientation="portrait" />
 
         <receiver
