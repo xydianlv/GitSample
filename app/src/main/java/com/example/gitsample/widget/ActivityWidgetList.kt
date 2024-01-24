@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.example.gitsample.base.BaseActivity
 import com.example.gitsample.base.PageType
-import com.example.gitsample.databinding.ActivityShowListBinding
+import com.example.gitsample.databinding.ActivityWidgetListBinding
 import com.example.gitsample.widget.dialog.ActivityMyDialogList
 import com.example.gitsample.widget.list.CommonListItemData
 
@@ -19,11 +19,12 @@ class ActivityWidgetList : BaseActivity() {
         }
     }
 
-    private lateinit var binding: ActivityShowListBinding
+    private lateinit var binding: ActivityWidgetListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityShowListBinding.inflate(layoutInflater)
+        binding = ActivityWidgetListBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         initActivity()
     }

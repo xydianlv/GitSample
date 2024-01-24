@@ -35,5 +35,5 @@ enum class PageType(val title: String, val info: String) {
     APP_WIDGET("AppWidgetTest", "桌面组件"),
 
     // WIDGET 下面的跳转界面
-    DIALOG("MyDialog", "自定义Dialog"),
+    DIALOG("Dialog", "各种样式的Dialog"),
 }

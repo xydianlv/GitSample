@@ -33,4 +33,9 @@
     <string name="kotlin_test_alert">点击右侧按钮，运行上面 Kotlin 代码</string>
     <string name="kotlin_test_run">Run</string>
 
+    <string name="dialog_text_title">标题</string>
+    <string name="dialog_text_msg">提示信息</string>
+    <string name="dialog_text_cancel">取消</string>
+    <string name="dialog_text_confirm">确认</string>
+
 </resources>
