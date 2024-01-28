@@ -117,6 +117,12 @@
         <activity
             android:name=".system.kotlin.ActivityKotlinTest"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".algorithm.ActivityAlgorithmList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".algorithm.sort.ActivitySortTest"
+            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".function.shortcut.ShortcutReceiver"

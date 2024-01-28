@@ -1,6 +1,7 @@
 package com.example.gitsample.main
 
 import android.os.Bundle
+import com.example.gitsample.algorithm.ActivityAlgorithmList
 import com.example.gitsample.base.BaseActivity
 import com.example.gitsample.databinding.ActivityMainBinding
 import com.example.gitsample.function.ActivityFunctionList
@@ -40,6 +41,8 @@ class MainActivity : BaseActivity() {
             ActivityFunctionList.open(this)
         }).addItem(CommonListItemData.buildData(PageType.WIDGET) {
             ActivityWidgetList.open(this)
+        }).addItem(CommonListItemData.buildData(PageType.ALGORITHM) {
+            ActivityAlgorithmList.open(this)
         }).refreshList()
     }
 }

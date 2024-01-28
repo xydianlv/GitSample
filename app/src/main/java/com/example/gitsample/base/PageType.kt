@@ -5,6 +5,7 @@ enum class PageType(val title: String, val info: String) {
     MAIN("MainTest", "主界面"),
 
     // MAIN 下面的跳转界面
+    ALGORITHM("AlgorithmList", "一些基本的算法实现"),
     WIDGET("WidgetList", "一些可复用的自定义控件"),
     FUNCTION("FunctionList", "一些好玩的小功能"),
     CANVAS("CanvasList", "Canvas绘制方法收集"),
@@ -26,7 +27,6 @@ enum class PageType(val title: String, val info: String) {
 
     // FUNCTION 下面的跳转界面
     GESTURE_LOCK("GestureLock", "九宫格解锁"),
-    FINGER_LOCK("FingerLock", "指纹解锁"),
     SHOT_SCREEN("ShotScreen", "截屏"),
     WALLPAPER("Wallpaper", "设置锁屏/壁纸"),
     FLOAT_DRAG("FloatDrag", "悬浮图标自动靠边"),
@@ -36,4 +36,7 @@ enum class PageType(val title: String, val info: String) {
 
     // WIDGET 下面的跳转界面
     DIALOG("Dialog", "各种样式的Dialog"),
+
+    // ALGORITHM 下面的跳转界面
+    SORT("SortTest", "常见的排序算法"),
 }
