@@ -82,11 +82,19 @@ class ActivitySortTest : BaseActivity() {
         SortUtils.sortSelect(valueList.toTypedArray()) { time, result ->
             binding.select.refreshResult(result, time)
         }
+        SortUtils.sortMerge(valueList.toTypedArray()) { time, result ->
+            binding.merge.refreshResult(result, time)
+        }
+        SortUtils.sortQuick(valueList.toTypedArray()) { time, result ->
+            binding.quick.refreshResult(result, time)
+        }
     }
 
     private fun initItemShow() {
         binding.pop.initTitle("PopSort")
         binding.insert.initTitle("InsertSort")
         binding.select.initTitle("SelectSort")
+        binding.merge.initTitle("MergeSort")
+        binding.quick.initTitle("QuickSort")
     }
 }

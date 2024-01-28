@@ -65,6 +65,18 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/insert" />
 
+    <com.example.gitsample.algorithm.sort.SortItemView
+        android:id="@+id/merge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/select" />
+
+    <com.example.gitsample.algorithm.sort.SortItemView
+        android:id="@+id/quick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/merge" />
+
     <com.example.gitsample.widget.common.CommonToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
