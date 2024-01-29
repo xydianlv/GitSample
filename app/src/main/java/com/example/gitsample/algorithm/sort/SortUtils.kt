@@ -49,7 +49,7 @@ object SortUtils {
             }
 
             SortType.SORT_BASE -> {
-                sortBase(array, 10)
+                sortBase(array, 1)
                 array
             }
 
@@ -259,17 +259,18 @@ object SortUtils {
     }
 
     @JvmStatic
-    // 基数排序：先找出数组中最大和最小的数，再创立一个最大差值的数组，再将每个数字出现的次数统计到自身所在的位置，最后从小到大取出所有数
-    // 时间复杂度：平均 -- O(n+k)、最大 -- O(n+ k)、最小 -- O(n+k)，n 个 0 到 k 之间的数
-    // 空间复杂度：O(n+k)
+    // 基数排序：从个位开始，将每个数字放到自己除余的列表中，再从0— 9 收录，然后从十位开始，重复上述操作
+    // 时间复杂度：平均 -- O(n*k)、最大 -- O(n*k)、最小 -- O(n*k)，n 个 0 到 k 之间的数
+    // 空间复杂度：O(n+k)，一般来说 n 要远远大于 k，基本可认为是 O(n)
     // 稳定性：不稳定
     private fun sortBase(array: Array<Int>, baseData: Int) {
         val baseArray: Array<ArrayList<Int>> = Array(10) { ArrayList() }
+        val basePre = baseData * 10
 
         var moreBase = false
         array.forEach {
-            baseArray[it % baseData].add(it)
-            if (it / baseData > 0) {
+            baseArray[it % basePre / baseData].add(it)
+            if (it / basePre > 0) {
                 moreBase = true
             }
         }
@@ -283,7 +284,7 @@ object SortUtils {
         }
 
         if (moreBase) {
-            sortBase(array, baseData * 10)
+            sortBase(array, basePre)
         }
     }
 }

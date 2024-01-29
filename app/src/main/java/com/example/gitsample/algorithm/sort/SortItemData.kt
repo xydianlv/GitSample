@@ -21,7 +21,7 @@ data class SortItemData(
             list.add(SortItemData(SortType.SORT_QUICK))
             list.add(SortItemData(SortType.SORT_HEAP))
             list.add(SortItemData(SortType.SORT_SUM))
-            //list.add(SortItemData(SortType.SORT_BASE))
+            list.add(SortItemData(SortType.SORT_BASE))
             return list
         }
     }

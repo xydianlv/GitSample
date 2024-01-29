@@ -23,6 +23,8 @@ class ActivitySortTest : BaseActivity() {
         fun open(context: Context) {
             context.startActivity(Intent(context, ActivitySortTest::class.java))
         }
+
+        private const val TEST_VALUE = "10 8 90 235 10 76 5 87 467 8"
     }
 
     private var listAdapter: CommonListAdapter<Class<out Any>, Any>? = null
@@ -62,6 +64,7 @@ class ActivitySortTest : BaseActivity() {
                 View.VISIBLE
             }
         }
+        binding.input.setText(TEST_VALUE)
     }
 
     private fun tryBuildIntArray(strValue: String) {
