@@ -3,10 +3,14 @@ package com.example.gitsample.algorithm.sort
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.core.widget.addTextChangedListener
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gitsample.base.BaseActivity
 import com.example.gitsample.base.PageType
 import com.example.gitsample.databinding.ActivitySortTestBinding
+import com.example.gitsample.widget.list.CommonListAdapter
+import com.example.multi.cell.ClassCellManager
 
 /**
  * Created by wyyu on 2024/1/28.
@@ -21,6 +25,9 @@ class ActivitySortTest : BaseActivity() {
         }
     }
 
+    private var listAdapter: CommonListAdapter<Class<out Any>, Any>? = null
+    private val sortList = ArrayList<SortItemData>()
+
     private lateinit var binding: ActivitySortTestBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,22 +39,28 @@ class ActivitySortTest : BaseActivity() {
     }
 
     private fun initActivity() {
-        initToolbar()
         initView()
-        initItemShow()
-    }
-
-    private fun initToolbar() {
-        binding.toolbar.initShow(PageType.SORT.title)
+        initList()
+        loadList()
     }
 
     private fun initView() {
+        binding.toolbar.initShow(PageType.SORT.title)
+
         binding.sort.setOnClickListener {
             val inputValue = binding.input.text
             tryBuildIntArray(inputValue.toString())
         }
+        binding.clear.setOnClickListener {
+            binding.input.setText("")
+        }
         binding.input.addTextChangedListener {
             binding.alert.text = ""
+            binding.clear.visibility = if (it.isNullOrEmpty()) {
+                View.GONE
+            } else {
+                View.VISIBLE
+            }
         }
     }
 
@@ -73,28 +86,26 @@ class ActivitySortTest : BaseActivity() {
     }
 
     private fun trySort(valueList: ArrayList<Int>) {
-        SortUtils.sortPop(valueList.toTypedArray()) { time, result ->
-            binding.pop.refreshResult(result, time)
-        }
-        SortUtils.sortInsert(valueList.toTypedArray()) { time, result ->
-            binding.insert.refreshResult(result, time)
-        }
-        SortUtils.sortSelect(valueList.toTypedArray()) { time, result ->
-            binding.select.refreshResult(result, time)
-        }
-        SortUtils.sortMerge(valueList.toTypedArray()) { time, result ->
-            binding.merge.refreshResult(result, time)
-        }
-        SortUtils.sortQuick(valueList.toTypedArray()) { time, result ->
-            binding.quick.refreshResult(result, time)
+        sortList.forEachIndexed { index, sortItemData ->
+            SortUtils.sortArray(sortItemData.sortType, valueList.toTypedArray()) { time, result ->
+                sortItemData.time = time
+                sortItemData.resultList.clear()
+                sortItemData.resultList.addAll(result)
+                listAdapter?.updateItem(index, sortItemData)
+            }
         }
     }
 
-    private fun initItemShow() {
-        binding.pop.initTitle("PopSort")
-        binding.insert.initTitle("InsertSort")
-        binding.select.initTitle("SelectSort")
-        binding.merge.initTitle("MergeSort")
-        binding.quick.initTitle("QuickSort")
+    private fun initList() {
+        listAdapter = CommonListAdapter(ClassCellManager(), binding.list)
+        listAdapter!!.registerItem(SortItemData::class.java, SortItemHolder())
+
+        binding.list.adapter = listAdapter
+        binding.list.layoutManager = LinearLayoutManager(this@ActivitySortTest)
+    }
+
+    private fun loadList() {
+        sortList.addAll(SortItemData.buildSortList())
+        listAdapter?.initList(sortList)
     }
 }

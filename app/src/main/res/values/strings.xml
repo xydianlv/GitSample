@@ -41,5 +41,6 @@
     <string name="algorithm_sort_input_hint">输入待排序的一串数字，数字之间用空格分开</string>
     <string name="algorithm_sort_btn">Sort</string>
     <string name="algorithm_sort_result">Result…</string>
+    <string name="algorithm_sort_clear">Clear</string>
 
 </resources>

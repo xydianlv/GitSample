@@ -20,4 +20,15 @@ class CommonListAdapter<K, D>(
 
         notifyItemRangeInserted(0, list.size)
     }
+
+    fun updateItem(index: Int, data: D) {
+        val itemList = getItemList()
+        if (itemList.isEmpty() || index > itemList.lastIndex) {
+            return
+        }
+        itemList.removeAt(index)
+        itemList.add(index, data)
+
+        notifyItemChanged(index)
+    }
 }

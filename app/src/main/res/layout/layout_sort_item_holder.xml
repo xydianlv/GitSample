@@ -8,18 +8,12 @@
         style="@style/my_divide_line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        style="@style/my_divide_line"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/result" />
 
     <View
         style="@style/my_divide_line"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="@dimen/padding_14"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
 
@@ -27,8 +21,8 @@
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/height_toolbar"
-        android:paddingHorizontal="@dimen/padding_14"
         android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/padding_14"
         android:text="@string/algorithm_sort_result"
         android:textColor="@color/ct_3"
         android:textSize="@dimen/text_12"
@@ -50,8 +44,8 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/height_toolbar"
-        android:paddingHorizontal="@dimen/padding_14"
         android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/padding_14"
         android:textColor="@color/ct_1"
         android:textSize="@dimen/text_15"
         app:layout_constraintStart_toStartOf="parent"

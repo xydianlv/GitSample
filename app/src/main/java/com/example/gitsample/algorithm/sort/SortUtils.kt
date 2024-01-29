@@ -7,18 +7,64 @@ package com.example.gitsample.algorithm.sort
 object SortUtils {
 
     @JvmStatic
+    fun sortArray(
+        @SortType sortType: String,
+        array: Array<Int>,
+        callback: (time: Long, result: Array<Int>) -> Unit
+    ) {
+        val startTime = System.currentTimeMillis()
+        val result = when (sortType) {
+            SortType.SORT_POP -> {
+                sortPop(array)
+                array
+            }
+
+            SortType.SORT_INSERT -> {
+                sortInsert(array)
+                array
+            }
+
+            SortType.SORT_SELECT -> {
+                sortSelect(array)
+                array
+            }
+
+            SortType.SORT_MERGE -> {
+                sortMerge(array)
+            }
+
+            SortType.SORT_QUICK -> {
+                sortQuick(array, 0, array.lastIndex)
+                array
+            }
+
+            SortType.SORT_HEAP -> {
+                sortHeap(array, array.lastIndex)
+                array
+            }
+
+            SortType.SORT_SUM -> {
+                sortSum(array)
+                array
+            }
+
+            SortType.SORT_BASE -> {
+                sortBase(array, 10)
+                array
+            }
+
+            else -> {
+                array
+            }
+        }
+        callback.invoke(System.currentTimeMillis() - startTime, result)
+    }
+
+    @JvmStatic
     // 冒泡排序：遍历数组，若存在相邻数据可交换，则交换该对相邻数据，并准备下次遍历，直到没有可交换为止
     // 时间复杂度：平均 -- O(n2)、最大 -- O(n2)、最小 -- O(n)，对于一个顺序数组，一次遍历即可退出
     // 空间复杂度：O(1)
     // 稳定性：稳定
-    fun sortPop(array: Array<Int>, callback: (time: Long, result: Array<Int>) -> Unit) {
-        val startTime = System.currentTimeMillis()
-        sortPop(array)
-        callback.invoke(System.currentTimeMillis() - startTime, array)
-    }
-
-
-    @JvmStatic
     private fun sortPop(array: Array<Int>) {
         var needPop = false
         array.forEachIndexed { index, value ->
@@ -38,8 +84,7 @@ object SortUtils {
     // 时间复杂度：平均 -- O(n2)、最大 -- O(n2)、最小 -- O(n)，对于一个顺序数组，每个数据本身就在自己的目标位置
     // 空间复杂度：O(1)
     // 稳定性：稳定
-    fun sortInsert(array: Array<Int>, callback: (time: Long, result: Array<Int>) -> Unit) {
-        val startTime = System.currentTimeMillis()
+    private fun sortInsert(array: Array<Int>) {
         array.forEachIndexed { index, _ ->
             for (position in index downTo 1) {
                 if (array[position] < array[position - 1]) {
@@ -49,10 +94,10 @@ object SortUtils {
                 }
             }
         }
-        callback.invoke(System.currentTimeMillis() - startTime, array)
     }
 
     @JvmStatic
+    // 交换数组中两个 index 位置的数据
     private fun swipeArrayIndex(array: Array<Int>, indexPre: Int, indexNext: Int) {
         array[indexPre] = array[indexPre] + array[indexNext]
         array[indexNext] = array[indexPre] - array[indexNext]
@@ -64,8 +109,7 @@ object SortUtils {
     // 时间复杂度：平均 -- O(n2)、最大 -- O(n2)、最小 -- O(n2)，每次寻找最小的数，都要遍历数组后面的所有的数
     // 空间复杂度：O(1)
     // 稳定性：稳定
-    fun sortSelect(array: Array<Int>, callback: (time: Long, result: Array<Int>) -> Unit) {
-        val startTime = System.currentTimeMillis()
+    private fun sortSelect(array: Array<Int>) {
         array.forEachIndexed { index, value ->
             var minValue = value
             var minIndex = index
@@ -80,7 +124,6 @@ object SortUtils {
                 array[index] = minValue
             }
         }
-        callback.invoke(System.currentTimeMillis() - startTime, array)
     }
 
     @JvmStatic
@@ -88,13 +131,6 @@ object SortUtils {
     // 时间复杂度：平均 -- O(n*log2n)、最大 -- O(n*log2n)、最小 -- O(n*log2n)
     // 空间复杂度：O(n)，在数组合并时，需要启用一个备用的数组空间
     // 稳定性：稳定
-    fun sortMerge(array: Array<Int>, callback: (time: Long, result: Array<Int>) -> Unit) {
-        val startTime = System.currentTimeMillis()
-        val result = sortMerge(array)
-        callback.invoke(System.currentTimeMillis() - startTime, result)
-    }
-
-    @JvmStatic
     private fun sortMerge(array: Array<Int>): Array<Int> {
         if (array.size <= 1) {
             return array
@@ -140,13 +176,6 @@ object SortUtils {
     // 时间复杂度：平均 -- O(n*log2n)、最大 -- O(n2)、最小 -- O(n*log2n)
     // 空间复杂度：O(n)，递归的过程需要 O(n) 大小的空间来存储划分位置
     // 稳定性：不稳定
-    fun sortQuick(array: Array<Int>, callback: (time: Long, result: Array<Int>) -> Unit) {
-        val startTime = System.currentTimeMillis()
-        sortQuick(array, 0, array.size - 1)
-        callback.invoke(System.currentTimeMillis() - startTime, array)
-    }
-
-    @JvmStatic
     private fun sortQuick(array: Array<Int>, indexStart: Int, indexEnd: Int) {
         if (indexStart >= indexEnd) {
             return
@@ -176,5 +205,85 @@ object SortUtils {
 
         sortQuick(array, indexStart, indexMid - 1)
         sortQuick(array, indexMid + 1, indexEnd)
+    }
+
+    @JvmStatic
+    // 堆排序：将数组维护成一个最大堆，没完成一次维护，交换第一个位置的最大数到堆末尾，再缩减堆的元素个数，以此类推
+    // 时间复杂度：平均 -- O(n*log2n)、最大 -- O(n*log2n)、最小 -- O(n*log2n)
+    // 空间复杂度：O(1)
+    // 稳定性：不稳定
+    private fun sortHeap(array: Array<Int>, lastIndex: Int) {
+        if (lastIndex <= 0) {
+            return
+        }
+        for (index in lastIndex downTo 0) {
+            if (array[index] > array[index / 2]) {
+                swipeArrayIndex(array, index, index / 2)
+            }
+        }
+        swipeArrayIndex(array, 0, lastIndex)
+        sortHeap(array, lastIndex - 1)
+    }
+
+    @JvmStatic
+    // 计数排序：先找出数组中最大和最小的数，再创立一个最大差值的数组，再将每个数字出现的次数统计到自身所在的位置，最后从小到大取出所有数
+    // 时间复杂度：平均 -- O(n+k)、最大 -- O(n+ k)、最小 -- O(n+k)，n 个 0 到 k 之间的数
+    // 空间复杂度：O(n+k)
+    // 稳定性：不稳定
+    private fun sortSum(array: Array<Int>) {
+        var minValue = array[0]
+        var maxValue = array[0]
+
+        array.forEach {
+            if (it < minValue) {
+                minValue = it
+            }
+            if (it > maxValue) {
+                maxValue = it
+            }
+        }
+
+        val countArray = Array(maxValue - minValue + 1) { 0 }
+        array.forEach {
+            countArray[it - minValue]++
+        }
+
+        var arrayIndex = 0
+        countArray.forEachIndexed { index, value ->
+            for (position in 0 until value) {
+                array[arrayIndex] = minValue + index
+                arrayIndex++
+            }
+
+        }
+    }
+
+    @JvmStatic
+    // 基数排序：先找出数组中最大和最小的数，再创立一个最大差值的数组，再将每个数字出现的次数统计到自身所在的位置，最后从小到大取出所有数
+    // 时间复杂度：平均 -- O(n+k)、最大 -- O(n+ k)、最小 -- O(n+k)，n 个 0 到 k 之间的数
+    // 空间复杂度：O(n+k)
+    // 稳定性：不稳定
+    private fun sortBase(array: Array<Int>, baseData: Int) {
+        val baseArray: Array<ArrayList<Int>> = Array(10) { ArrayList() }
+
+        var moreBase = false
+        array.forEach {
+            baseArray[it % baseData].add(it)
+            if (it / baseData > 0) {
+                moreBase = true
+            }
+        }
+
+        var arrayIndex = 0
+        baseArray.forEach { list ->
+            list.forEach { data ->
+                array[arrayIndex] = data
+                arrayIndex++
+            }
+        }
+
+        if (moreBase) {
+            sortBase(array, baseData * 10)
+        }
     }
 }
