@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.example.gitsample.algorithm.sort.ActivitySortTest
+import com.example.gitsample.algorithm.traversal.ActivityTraversalTest
 import com.example.gitsample.base.BaseActivity
 import com.example.gitsample.base.PageType
 import com.example.gitsample.databinding.ActivityAlgorithmListBinding
@@ -44,6 +45,8 @@ class ActivityAlgorithmList : BaseActivity() {
     private fun initList() {
         binding.list.addItem(CommonListItemData.buildData(PageType.SORT) {
             ActivitySortTest.open(this@ActivityAlgorithmList)
+        }).addItem(CommonListItemData.buildData(PageType.TRAVERSAL) {
+            ActivityTraversalTest.open(this@ActivityAlgorithmList)
         }).refreshList()
     }
 }

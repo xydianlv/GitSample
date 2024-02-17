@@ -43,4 +43,6 @@
     <string name="algorithm_sort_result">Result…</string>
     <string name="algorithm_sort_clear">Clear</string>
 
+    <string name="algorithm_traversal_btn">Traversal</string>
+
 </resources>

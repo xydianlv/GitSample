@@ -123,6 +123,9 @@
         <activity
             android:name=".algorithm.sort.ActivitySortTest"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".algorithm.traversal.ActivityTraversalTest"
+            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".function.shortcut.ShortcutReceiver"
