@@ -45,4 +45,6 @@
 
     <string name="algorithm_traversal_btn">Traversal</string>
 
+    <string name="algorithm_link_re_change">ReChange</string>
+
 </resources>

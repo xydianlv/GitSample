@@ -40,4 +40,5 @@ enum class PageType(val title: String, val info: String) {
     // ALGORITHM 下面的跳转界面
     SORT("SortTest", "常见的排序算法"),
     TRAVERSAL("TraversalTest", "二叉树的遍历"),
+    LINK("LinkTest", "列表相关操作"),
 }

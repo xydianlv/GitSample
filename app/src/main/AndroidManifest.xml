@@ -126,6 +126,9 @@
         <activity
             android:name=".algorithm.traversal.ActivityTraversalTest"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".algorithm.link.ActivityLinkTest"
+            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".function.shortcut.ShortcutReceiver"

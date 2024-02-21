@@ -3,6 +3,7 @@ package com.example.gitsample.algorithm
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import com.example.gitsample.algorithm.link.ActivityLinkTest
 import com.example.gitsample.algorithm.sort.ActivitySortTest
 import com.example.gitsample.algorithm.traversal.ActivityTraversalTest
 import com.example.gitsample.base.BaseActivity
@@ -47,6 +48,8 @@ class ActivityAlgorithmList : BaseActivity() {
             ActivitySortTest.open(this@ActivityAlgorithmList)
         }).addItem(CommonListItemData.buildData(PageType.TRAVERSAL) {
             ActivityTraversalTest.open(this@ActivityAlgorithmList)
+        }).addItem(CommonListItemData.buildData(PageType.LINK) {
+            ActivityLinkTest.open(this@ActivityAlgorithmList)
         }).refreshList()
     }
 }
