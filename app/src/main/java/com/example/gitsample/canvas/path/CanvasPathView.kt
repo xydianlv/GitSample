@@ -10,17 +10,9 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.gitsample.utils.UIUtils
 
-class CanvasPathView : View {
-
-    constructor(context: Context) : super(context)
-
-    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
-
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
-        context,
-        attrs,
-        defStyleAttr
-    )
+class CanvasPathView(
+    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
+) : View(context, attrs, defStyleAttr) {
 
     private val sizeWidth = UIUtils.screenWidth() / 2.0f + UIUtils.dpToPx(40.0f)
     private val sizeDivide = UIUtils.dpToPx(40.0f) * 1.0f

@@ -18,6 +18,11 @@ enum class PageType(val title: String, val info: String) {
     SYSTEM_INFO("SystemInfo", "手机相关的所有信息"),
     KOTLIN_TEST("KotlinTest", "Kotlin 协程相关总结"),
 
+    // KOTLIN 下面的跳转界面
+    KOTLIN_COROUTINE_TEST("KotlinCoroutineTest", "Kotlin 协程相关总结"),
+    KOTLIN_VIEW_MODEL_TEST("KotlinViewModelTest", "Kotlin ViewModel 相关总结"),
+    KOTLIN_TOP_LEVEL_FUNCTION_TEST("KotlinTopLevelFunctionTest", "Kotlin 高级函数相关总结"),
+
     // CANVAS 下面的跳转界面
     CANVAS_FIGURE("CanvasFigure", "Canvas 绘制几何形状"),
     CANVAS_TEXT("CanvasText", "Canvas 绘制文字"),

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="400.0dp"
+        android:layout_margin="@dimen/padding_14"
+        android:background="@drawable/stroke_radius_6_color_line"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.4"
+            android:paddingHorizontal="@dimen/padding_14"
+            android:paddingVertical="@dimen/padding_6"
+            android:textColor="@color/ct_1"
+            android:textSize="@dimen/text_12" />
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/alert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding_14"
+        android:paddingVertical="@dimen/padding_6"
+        android:text="@string/kotlin_test_alert"
+        android:textColor="@color/ct_2"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintTop_toBottomOf="@id/scroll" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/run"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding_14"
+        android:text="@string/kotlin_test_run"
+        android:textColor="@color/color_alert"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintBottom_toBottomOf="@id/alert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/alert" />
+
+    <com.example.gitsample.widget.common.CommonToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.gitsample.widget.log.LogListView
+        android:id="@+id/log_list"
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/alert" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -118,6 +118,15 @@
             android:name=".system.kotlin.ActivityKotlinTest"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".system.kotlin.coroutine.ActivityCoroutineTest"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".system.kotlin.viewmodel.ActivityViewModelTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".system.kotlin.tlfunction.ActivityTopLevelFunction"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".algorithm.ActivityAlgorithmList"
             android:screenOrientation="portrait" />
         <activity
