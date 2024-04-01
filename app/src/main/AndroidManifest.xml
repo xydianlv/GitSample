@@ -138,6 +138,12 @@
         <activity
             android:name=".algorithm.link.ActivityLinkTest"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".widget.text.ActivityTextViewTest"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".widget.text.span.ActivityTextSpanTest"
+            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".function.shortcut.ShortcutReceiver"

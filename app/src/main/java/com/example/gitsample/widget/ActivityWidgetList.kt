@@ -8,6 +8,7 @@ import com.example.gitsample.base.PageType
 import com.example.gitsample.databinding.ActivityWidgetListBinding
 import com.example.gitsample.widget.dialog.ActivityMyDialogList
 import com.example.gitsample.widget.list.CommonListItemData
+import com.example.gitsample.widget.text.ActivityTextViewTest
 
 class ActivityWidgetList : BaseActivity() {
 
@@ -41,6 +42,8 @@ class ActivityWidgetList : BaseActivity() {
     private fun initList() {
         binding.list.addItem(CommonListItemData.buildData(PageType.DIALOG) {
             ActivityMyDialogList.open(this)
+        }).addItem(CommonListItemData.buildData(PageType.TEXT_VIEW) {
+            ActivityTextViewTest.open(this)
         }).refreshList()
     }
 }

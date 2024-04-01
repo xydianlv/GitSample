@@ -41,6 +41,10 @@ enum class PageType(val title: String, val info: String) {
 
     // WIDGET 下面的跳转界面
     DIALOG("Dialog", "各种样式的Dialog"),
+    TEXT_VIEW("TextView", "各种文字控件展示效果"),
+
+    // TEXT_VIEW 下面的跳转界面
+    TEXT_SPAN("TextSpanTest", "文字Span展示测试"),
 
     // ALGORITHM 下面的跳转界面
     SORT("SortTest", "常见的排序算法"),
