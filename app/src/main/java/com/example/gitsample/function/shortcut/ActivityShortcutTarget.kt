@@ -1,20 +1,20 @@
 package com.example.gitsample.function.shortcut
 
 import android.os.Bundle
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
+import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityShortcutTargetBinding
+import com.example.widget.activity.BaseActivity
 
-class ActivityShortcutTarget : BaseActivity() {
-
-    private lateinit var binding: ActivityShortcutTargetBinding
+class ActivityShortcutTarget : BaseActivity<ActivityShortcutTargetBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityShortcutTargetBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         initActivity()
+    }
+
+    override fun getViewBinding(): ActivityShortcutTargetBinding {
+        return ActivityShortcutTargetBinding.inflate(layoutInflater)
     }
 
     private fun initActivity() {

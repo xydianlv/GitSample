@@ -10,10 +10,16 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/list" />
-            <option value="$PROJECT_DIR$/list/expand" />
-            <option value="$PROJECT_DIR$/list/multi" />
-            <option value="$PROJECT_DIR$/list/processor" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/common/base" />
+            <option value="$PROJECT_DIR$/common/utils" />
+            <option value="$PROJECT_DIR$/common/widget" />
+            <option value="$PROJECT_DIR$/function" />
+            <option value="$PROJECT_DIR$/function/init" />
+            <option value="$PROJECT_DIR$/function/list" />
+            <option value="$PROJECT_DIR$/function/list/expand" />
+            <option value="$PROJECT_DIR$/function/list/multi" />
+            <option value="$PROJECT_DIR$/function/list/processor" />
             <option value="$PROJECT_DIR$/resource" />
           </set>
         </option>

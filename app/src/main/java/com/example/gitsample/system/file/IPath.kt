@@ -1,6 +1,6 @@
 package com.example.gitsample.system.file
 
-import androidx.annotation.StringDef
+import com.example.base.FileType
 
 interface IPath {
 
@@ -22,22 +22,4 @@ interface IPath {
     // 系统目录中存放文件的目录
     // 与 extraFilePath 的区别是，前者是在应用目录中创建一个存放文件的地址，后者是在 DCIM 中创建一个存放的地址
     fun saveMediaPath(): String
-}
-
-@Retention(AnnotationRetention.SOURCE)
-@StringDef(
-    FileType.ROOT,
-    FileType.MEDIA,
-    FileType.LOG,
-    FileType.TEMP,
-    FileType.DCIM_DIR
-)
-annotation class FileType {
-    companion object {
-        const val ROOT = "" // 根目录
-        const val MEDIA = "media" // 视频/图片文件存放目录
-        const val LOG = "log" // 日志存放地址
-        const val TEMP = "temp" // SD卡的缓存文件存放地址
-        const val DCIM_DIR = "git_sample" // DCIM 目录下的媒体文件目录
-    }
 }

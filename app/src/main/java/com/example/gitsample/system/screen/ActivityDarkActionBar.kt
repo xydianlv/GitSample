@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat.Type
 import com.example.gitsample.databinding.ActivityDarkActionBarBinding
-import com.example.gitsample.utils.UIUtils
+import com.example.utils.UIUtils
 
 class ActivityDarkActionBar : AppCompatActivity() {
 

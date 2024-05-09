@@ -8,7 +8,7 @@ import android.database.Cursor
 import android.net.Uri
 import android.os.Build
 import android.text.TextUtils
-import com.example.gitsample.utils.ZLog
+import com.example.utils.ZLog
 
 object ShortCutPermissionChecker {
 

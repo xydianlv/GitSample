@@ -7,8 +7,8 @@ import android.view.MotionEvent
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.customview.widget.ViewDragHelper
-import com.example.gitsample.utils.UIUtils
-import com.example.gitsample.utils.ZLog
+import com.example.utils.ZLog
+import com.example.utils.UIUtils
 
 class FloatDragLayout : ConstraintLayout {
 

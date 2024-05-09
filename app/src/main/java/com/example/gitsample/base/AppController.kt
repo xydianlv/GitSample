@@ -2,9 +2,9 @@ package com.example.gitsample.base
 
 import android.app.Application
 import android.content.Context
-import com.example.gitsample.base.init.AppInitDelegate
-import com.example.gitsample.base.init.utils.AppLaunchChecker
-import com.example.gitsample.base.module.AnalyticManager
+import com.example.base.manager.AnalyticManager
+import com.example.init.AppInitDelegate
+import com.example.init.utils.AppLaunchChecker
 
 class AppController : Application() {
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.GitSample" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- 闪动黑屏问题 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 应用主背景色 -->
+        <item name="android:windowBackground">@color/color_white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- 设置无标题栏 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置无 ActionBar -->
+        <item name="android:windowActionBar">false</item>
+        <!-- Primary brand color. 列表拖动到尾部的月牙形阴影 -->
+        <item name="colorPrimary">@color/color_shadow</item>
+        <!-- 控件在选中时默认使用该颜色 -->
+        <item name="colorAccent">@color/color_white</item>
+    </style>
+
+    <style name="ThemeSplash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/color_white</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="ThemeTransparent" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+</resources>

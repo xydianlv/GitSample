@@ -8,7 +8,7 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
-import com.example.gitsample.utils.UIUtils
+import com.example.utils.UIUtils
 
 class CanvasPathView(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0

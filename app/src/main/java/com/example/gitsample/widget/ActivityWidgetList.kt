@@ -3,14 +3,15 @@ package com.example.gitsample.widget
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
+import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityWidgetListBinding
 import com.example.gitsample.widget.dialog.ActivityMyDialogList
-import com.example.gitsample.widget.list.CommonListItemData
+import com.example.gitsample.widget.fragment.ActivityFragmentTest
 import com.example.gitsample.widget.text.ActivityTextViewTest
+import com.example.widget.activity.BaseActivity
+import com.example.widget.list.CommonListItemData
 
-class ActivityWidgetList : BaseActivity() {
+class ActivityWidgetList : BaseActivity<ActivityWidgetListBinding>() {
 
     companion object {
 
@@ -20,19 +21,15 @@ class ActivityWidgetList : BaseActivity() {
         }
     }
 
-    private lateinit var binding: ActivityWidgetListBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityWidgetListBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        initActivity()
-    }
-
-    private fun initActivity() {
         initToolbar()
         initList()
+    }
+
+    override fun getViewBinding(): ActivityWidgetListBinding {
+        return ActivityWidgetListBinding.inflate(layoutInflater)
     }
 
     private fun initToolbar() {
@@ -40,10 +37,12 @@ class ActivityWidgetList : BaseActivity() {
     }
 
     private fun initList() {
-        binding.list.addItem(CommonListItemData.buildData(PageType.DIALOG) {
+        binding.list.addItem(CommonListItemData.obj(PageType.DIALOG).clickListener {
             ActivityMyDialogList.open(this)
-        }).addItem(CommonListItemData.buildData(PageType.TEXT_VIEW) {
+        }).addItem(CommonListItemData.obj(PageType.TEXT_VIEW).clickListener {
             ActivityTextViewTest.open(this)
+        }).addItem(CommonListItemData.obj(PageType.FRAGMENT).clickListener {
+            ActivityFragmentTest.open(this)
         }).refreshList()
     }
 }

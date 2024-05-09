@@ -3,13 +3,13 @@ package com.example.gitsample.widget.text
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
+import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityTextViewTestBinding
-import com.example.gitsample.widget.list.CommonListItemData
 import com.example.gitsample.widget.text.span.ActivityTextSpanTest
+import com.example.widget.activity.BaseActivity
+import com.example.widget.list.CommonListItemData
 
-class ActivityTextViewTest : BaseActivity() {
+class ActivityTextViewTest : BaseActivity<ActivityTextViewTestBinding>() {
 
     companion object {
 
@@ -19,19 +19,15 @@ class ActivityTextViewTest : BaseActivity() {
         }
     }
 
-    private lateinit var binding: ActivityTextViewTestBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityTextViewTestBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        initActivity()
-    }
-
-    private fun initActivity() {
         initToolbar()
         initList()
+    }
+
+    override fun getViewBinding(): ActivityTextViewTestBinding {
+        return ActivityTextViewTestBinding.inflate(layoutInflater)
     }
 
     private fun initToolbar() {
@@ -39,7 +35,7 @@ class ActivityTextViewTest : BaseActivity() {
     }
 
     private fun initList() {
-        binding.list.addItem(CommonListItemData.buildData(PageType.TEXT_SPAN) {
+        binding.list.addItem(CommonListItemData.obj(PageType.TEXT_SPAN).clickListener {
             ActivityTextSpanTest.open(this@ActivityTextViewTest)
         }).refreshList()
     }

@@ -3,7 +3,7 @@ package com.example.gitsample.function.shortcut
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.example.gitsample.utils.ZToast
+import com.example.widget.view.ZToast
 
 class ShortcutReceiver : BroadcastReceiver() {
 

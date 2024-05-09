@@ -3,12 +3,11 @@ package com.example.gitsample.function.applayout
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import com.example.gitsample.base.BaseActivity
 import com.example.gitsample.databinding.ActivityAppLayoutTestBinding
 import com.example.gitsample.function.applayout.fragment.FragmentPagerAdapter
-import java.lang.StringBuilder
+import com.example.widget.activity.BaseActivity
 
-class ActivityAppLayoutTest : BaseActivity() {
+class ActivityAppLayoutTest : BaseActivity<ActivityAppLayoutTestBinding>() {
 
     companion object {
 
@@ -18,14 +17,14 @@ class ActivityAppLayoutTest : BaseActivity() {
         }
     }
 
-    private lateinit var binding: ActivityAppLayoutTestBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAppLayoutTestBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         initViewPager()
+    }
+
+    override fun getViewBinding(): ActivityAppLayoutTestBinding {
+        return ActivityAppLayoutTestBinding.inflate(layoutInflater)
     }
 
     private fun initViewPager() {

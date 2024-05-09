@@ -2,7 +2,10 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
+      <module name="GitSample.init" target="17" />
+      <module name="GitSample.list.multi" target="17" />
       <module name="GitSample.multi" target="11" />
+      <module name="GitSample.widget" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

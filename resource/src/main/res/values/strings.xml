@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GitSample</string>
+
+    <string name="image">Image</string>
+
+    <string name="text_short_en">Text</string>
+    <string name="text_long_en">TextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextText</string>
+
+    <string name="text_short_cn">测试</string>
+    <string name="text_long_cn">测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试</string>
+</resources>

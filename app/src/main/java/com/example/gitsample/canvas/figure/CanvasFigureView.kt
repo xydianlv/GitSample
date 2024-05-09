@@ -7,7 +7,7 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
-import com.example.gitsample.utils.UIUtils
+import com.example.utils.UIUtils
 
 class CanvasFigureView : View {
 
@@ -60,7 +60,7 @@ class CanvasFigureView : View {
         canvas.drawRect(rect, paint)
 
         refreshRect(4, false)
-        rect.right = rect.right + sizeDivide
+        rect.right += sizeDivide
         // 绘制一个椭圆（椭圆区域，画笔）
         canvas.drawOval(rect, paint)
 
@@ -87,7 +87,7 @@ class CanvasFigureView : View {
         canvas.drawRect(rect, paint)
 
         refreshRect(4, true)
-        rect.right = rect.right + sizeDivide
+        rect.right += sizeDivide
         // 绘制一个实心椭圆
         canvas.drawOval(rect, paint)
 

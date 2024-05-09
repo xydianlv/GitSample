@@ -6,7 +6,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
-import com.example.gitsample.utils.UIUtils
+import com.example.utils.UIUtils
 
 class CanvasTextView : View {
 

@@ -36,7 +36,7 @@
         app:layout_constraintStart_toEndOf="@id/re_change"
         app:layout_constraintTop_toTopOf="@id/re_change" />
 
-    <com.example.gitsample.widget.common.CommonToolbar
+    <com.example.widget.view.CommonToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_toolbar"

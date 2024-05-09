@@ -49,14 +49,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/alert" />
 
-    <com.example.gitsample.widget.common.CommonToolbar
+    <com.example.widget.view.CommonToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.gitsample.widget.log.LogListView
+    <com.example.widget.log.LogListView
         android:id="@+id/log_list"
         android:layout_width="match_parent"
         android:layout_height="0.0dp"

@@ -3,11 +3,11 @@ package com.example.gitsample.function.lock.gesture
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import com.example.gitsample.base.BaseActivity
 import com.example.gitsample.databinding.ActivityGestureLockBinding
-import com.example.gitsample.utils.ZToast
+import com.example.widget.view.ZToast
+import com.example.widget.activity.BaseActivity
 
-class ActivityGestureLock : BaseActivity() {
+class ActivityGestureLock : BaseActivity<ActivityGestureLockBinding>() {
 
     companion object {
 
@@ -17,14 +17,14 @@ class ActivityGestureLock : BaseActivity() {
         }
     }
 
-    private lateinit var binding: ActivityGestureLockBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityGestureLockBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         initActivity()
+    }
+
+    override fun getViewBinding(): ActivityGestureLockBinding {
+        return ActivityGestureLockBinding.inflate(layoutInflater)
     }
 
     override fun isLightStatusBar(): Boolean {

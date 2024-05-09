@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.gitsample.widget.common.CommonToolbar
+    <com.example.widget.view.CommonToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.gitsample.widget.list.CommonListView
+    <com.example.widget.list.CommonListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

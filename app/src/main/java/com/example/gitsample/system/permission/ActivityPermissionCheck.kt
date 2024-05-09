@@ -4,17 +4,16 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.example.gitsample.R
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
+import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityPermissionCheckBinding
-import com.example.gitsample.utils.ZToast
-import com.example.gitsample.widget.list.CommonListItemData
+import com.example.widget.view.ZToast
+import com.example.widget.activity.BaseActivity
+import com.example.widget.list.CommonListItemData
 
 /**
  * 权限需要先声明，才能再动态申请
  */
-
-class ActivityPermissionCheck : BaseActivity() {
+class ActivityPermissionCheck : BaseActivity<ActivityPermissionCheckBinding>() {
 
     companion object {
         @JvmStatic
@@ -23,27 +22,23 @@ class ActivityPermissionCheck : BaseActivity() {
         }
     }
 
-    private lateinit var binding: ActivityPermissionCheckBinding
-
     private val typeDataMap = HashMap<PermissionItemType, CommonListItemData>()
     private val typeIntMap = HashMap<PermissionItemType, Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPermissionCheckBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        initActivity()
+        initToolbar()
+        initList()
+    }
+
+    override fun getViewBinding(): ActivityPermissionCheckBinding {
+        return ActivityPermissionCheckBinding.inflate(layoutInflater)
     }
 
     override fun onResume() {
         super.onResume()
         checkAndRefresh()
-    }
-
-    private fun initActivity() {
-        initToolbar()
-        initList()
     }
 
     private fun initToolbar() {
@@ -52,7 +47,7 @@ class ActivityPermissionCheck : BaseActivity() {
 
     private fun initList() {
         for (type in PermissionItemType.values()) {
-            val itemData = CommonListItemData.buildData(type) {
+            val itemData = CommonListItemData.obj(type.title, type.info).clickListener {
                 if (PermissionChecker.hasPermission(type)) {
                     ZToast.show("已获得该权限")
                 } else {

@@ -4,9 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
+import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityCoroutineTestBinding
+import com.example.widget.activity.BaseActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 
-class ActivityCoroutineTest : BaseActivity() {
+class ActivityCoroutineTest : BaseActivity<ActivityCoroutineTestBinding>() {
 
     companion object {
         @JvmStatic
@@ -25,28 +25,24 @@ class ActivityCoroutineTest : BaseActivity() {
         }
     }
 
-    private lateinit var binding: ActivityCoroutineTestBinding
-
     private var startTime: Long = 0L
     private var mainJob: Job? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityCoroutineTestBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        initActivity()
+        initToolbar()
+        initCode()
+        initClick()
+    }
+
+    override fun getViewBinding(): ActivityCoroutineTestBinding {
+        return ActivityCoroutineTestBinding.inflate(layoutInflater)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         mainJob?.cancel()
-    }
-
-    private fun initActivity() {
-        initToolbar()
-        initCode()
-        initClick()
     }
 
     private fun initToolbar() {

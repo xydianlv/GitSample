@@ -6,15 +6,15 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
 import com.example.gitsample.R
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
+import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityShotScreenBinding
 import com.example.gitsample.system.file.PathManager
-import com.example.gitsample.utils.BitmapUtils
-import com.example.gitsample.utils.MediaUtils
-import com.example.gitsample.utils.ZToast
+import com.example.widget.view.ZToast
+import com.example.utils.BitmapUtils
+import com.example.utils.MediaUtils
+import com.example.widget.activity.BaseActivity
 
-class ActivityShotScreen : BaseActivity() {
+class ActivityShotScreen : BaseActivity<ActivityShotScreenBinding>() {
 
     companion object {
         @JvmStatic
@@ -23,19 +23,15 @@ class ActivityShotScreen : BaseActivity() {
         }
     }
 
-    private lateinit var binding: ActivityShotScreenBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityShotScreenBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        initActivity()
-    }
-
-    private fun initActivity() {
         initToolbar()
         initClick()
+    }
+
+    override fun getViewBinding(): ActivityShotScreenBinding {
+        return ActivityShotScreenBinding.inflate(layoutInflater)
     }
 
     private fun initToolbar() {

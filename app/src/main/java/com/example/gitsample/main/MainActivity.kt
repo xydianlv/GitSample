@@ -2,30 +2,25 @@ package com.example.gitsample.main
 
 import android.os.Bundle
 import com.example.gitsample.algorithm.ActivityAlgorithmList
-import com.example.gitsample.base.BaseActivity
 import com.example.gitsample.databinding.ActivityMainBinding
 import com.example.gitsample.function.ActivityFunctionList
-import com.example.gitsample.base.PageType
+import com.example.base.PageType
 import com.example.gitsample.canvas.ActivityCanvasList
 import com.example.gitsample.system.ActivitySystemList
 import com.example.gitsample.widget.ActivityWidgetList
-import com.example.gitsample.widget.list.CommonListItemData
+import com.example.widget.activity.BaseActivity
+import com.example.widget.list.CommonListItemData
 
-class MainActivity : BaseActivity() {
-
-    private lateinit var binding: ActivityMainBinding
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        initActivity()
-    }
-
-    private fun initActivity() {
         initBar()
         initList()
+    }
+
+    override fun getViewBinding(): ActivityMainBinding {
+        return ActivityMainBinding.inflate(layoutInflater)
     }
 
     private fun initBar() {
@@ -33,15 +28,15 @@ class MainActivity : BaseActivity() {
     }
 
     private fun initList() {
-        binding.mainList.addItem(CommonListItemData.buildData(PageType.SYSTEM) {
+        binding.mainList.addItem(CommonListItemData.obj(PageType.SYSTEM).clickListener {
             ActivitySystemList.open(this)
-        }).addItem(CommonListItemData.buildData(PageType.CANVAS) {
+        }).addItem(CommonListItemData.obj(PageType.CANVAS).clickListener {
             ActivityCanvasList.open(this)
-        }).addItem(CommonListItemData.buildData(PageType.FUNCTION) {
+        }).addItem(CommonListItemData.obj(PageType.FUNCTION).clickListener {
             ActivityFunctionList.open(this)
-        }).addItem(CommonListItemData.buildData(PageType.WIDGET) {
+        }).addItem(CommonListItemData.obj(PageType.WIDGET).clickListener {
             ActivityWidgetList.open(this)
-        }).addItem(CommonListItemData.buildData(PageType.ALGORITHM) {
+        }).addItem(CommonListItemData.obj(PageType.ALGORITHM).clickListener {
             ActivityAlgorithmList.open(this)
         }).refreshList()
     }

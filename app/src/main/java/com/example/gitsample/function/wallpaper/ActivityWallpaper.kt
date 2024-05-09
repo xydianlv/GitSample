@@ -6,17 +6,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.example.gitsample.R
-import com.example.gitsample.base.BaseActivity
 import com.example.gitsample.databinding.ActivityWallpaperBinding
 import com.example.gitsample.system.permission.PermissionChecker
 import com.example.gitsample.system.permission.PermissionItemType
 import com.example.gitsample.system.permission.PermissionRequestCallback
-import com.example.gitsample.utils.BitmapUtils
-import com.example.gitsample.utils.UIUtils
-import com.example.gitsample.utils.ZLog
-import com.example.gitsample.utils.ZToast
+import com.example.utils.ZLog
+import com.example.widget.view.ZToast
+import com.example.utils.BitmapUtils
+import com.example.utils.UIUtils
+import com.example.widget.activity.BaseActivity
 
-class ActivityWallpaper : BaseActivity() {
+class ActivityWallpaper : BaseActivity<ActivityWallpaperBinding>() {
 
     companion object {
 
@@ -26,15 +26,14 @@ class ActivityWallpaper : BaseActivity() {
         }
     }
 
-    private lateinit var binding: ActivityWallpaperBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityWallpaperBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
         UIUtils.setFullScreenShow(this)
         initActivity()
+    }
+
+    override fun getViewBinding(): ActivityWallpaperBinding {
+        return ActivityWallpaperBinding.inflate(layoutInflater)
     }
 
     override fun isLightStatusBar(): Boolean {

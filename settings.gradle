@@ -16,7 +16,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "GitSample"
 
-apply from: './list/features.gradle'
+apply from: './common/features.gradle'
+apply from: './function/features.gradle'
 
 include ':app'
 include ':resource'

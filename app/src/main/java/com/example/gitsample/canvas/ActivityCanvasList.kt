@@ -3,12 +3,12 @@ package com.example.gitsample.canvas
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
+import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityCanvasListBinding
-import com.example.gitsample.widget.list.CommonListItemData
+import com.example.widget.activity.BaseActivity
+import com.example.widget.list.CommonListItemData
 
-class ActivityCanvasList : BaseActivity() {
+class ActivityCanvasList : BaseActivity<ActivityCanvasListBinding>() {
 
     companion object {
         @JvmStatic
@@ -17,19 +17,15 @@ class ActivityCanvasList : BaseActivity() {
         }
     }
 
-    private lateinit var binding: ActivityCanvasListBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityCanvasListBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        initActivity()
-    }
-
-    private fun initActivity() {
         initToolbar()
         initList()
+    }
+
+    override fun getViewBinding(): ActivityCanvasListBinding {
+        return ActivityCanvasListBinding.inflate(layoutInflater)
     }
 
     private fun initToolbar() {
@@ -37,15 +33,15 @@ class ActivityCanvasList : BaseActivity() {
     }
 
     private fun initList() {
-        binding.list.addItem(CommonListItemData.buildData(PageType.CANVAS_FIGURE) {
+        binding.list.addItem(CommonListItemData.obj(PageType.CANVAS_FIGURE).clickListener {
             ActivityCanvasShow.open(this, PageType.CANVAS_FIGURE)
-        }).addItem(CommonListItemData.buildData(PageType.CANVAS_TEXT) {
+        }).addItem(CommonListItemData.obj(PageType.CANVAS_TEXT).clickListener {
             ActivityCanvasShow.open(this, PageType.CANVAS_TEXT)
-        }).addItem(CommonListItemData.buildData(PageType.CANVAS_PATH) {
+        }).addItem(CommonListItemData.obj(PageType.CANVAS_PATH).clickListener {
             ActivityCanvasShow.open(this, PageType.CANVAS_PATH)
-        }).addItem(CommonListItemData.buildData(PageType.CANVAS_IMAGE) {
+        }).addItem(CommonListItemData.obj(PageType.CANVAS_IMAGE).clickListener {
             ActivityCanvasShow.open(this, PageType.CANVAS_IMAGE)
-        }).addItem(CommonListItemData.buildData(PageType.CANVAS_X_FER_MODE) {
+        }).addItem(CommonListItemData.obj(PageType.CANVAS_X_FER_MODE).clickListener {
 
         }).refreshList()
     }

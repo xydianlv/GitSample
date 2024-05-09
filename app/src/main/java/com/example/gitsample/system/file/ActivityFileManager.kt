@@ -7,14 +7,15 @@ import android.os.Bundle
 import android.os.Environment
 import android.view.View
 import androidx.core.content.ContextCompat
+import com.example.base.FileType
 import com.example.gitsample.R
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
+import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityFileManagerBinding
-import com.example.gitsample.utils.MemoryUtils
-import com.example.gitsample.widget.list.CommonListItemData
+import com.example.utils.MemoryUtils
+import com.example.widget.activity.BaseActivity
+import com.example.widget.list.CommonListItemData
 
-class ActivityFileManager : BaseActivity() {
+class ActivityFileManager : BaseActivity<ActivityFileManagerBinding>() {
 
     companion object {
         @JvmStatic
@@ -23,20 +24,16 @@ class ActivityFileManager : BaseActivity() {
         }
     }
 
-    private lateinit var binding: ActivityFileManagerBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityFileManagerBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        initActivity()
-    }
-
-    private fun initActivity() {
         initToolbar()
         initView()
         initList()
+    }
+
+    override fun getViewBinding(): ActivityFileManagerBinding {
+        return ActivityFileManagerBinding.inflate(layoutInflater)
     }
 
     private fun initToolbar() {
@@ -59,31 +56,31 @@ class ActivityFileManager : BaseActivity() {
             binding.alert.text = tag
             binding.alert.setTextColor(ContextCompat.getColor(this, R.color.color_alert))
         }
-        binding.list.addItem(CommonListItemData.buildData(FileShowType.INNER_DATA_PATH) {
+        binding.list.addItem(buildItemData(FileShowType.INNER_DATA_PATH) {
             it.tag = PathManager.manager().innerDataPath(FileType.ROOT)
             clickListener.onClick(it)
-        }).addItem(CommonListItemData.buildData(FileShowType.INNER_CACHE_PATH) {
+        }).addItem(buildItemData(FileShowType.INNER_CACHE_PATH) {
             it.tag = PathManager.manager().innerCachePath(FileType.ROOT)
             clickListener.onClick(it)
-        }).addItem(CommonListItemData.buildData(FileShowType.EXTRA_FILE_PATH) {
+        }).addItem(buildItemData(FileShowType.EXTRA_FILE_PATH) {
             it.tag = PathManager.manager().extraFilePath(FileType.ROOT)
             clickListener.onClick(it)
-        }).addItem(CommonListItemData.buildData(FileShowType.EXTRA_CACHE_PATH) {
+        }).addItem(buildItemData(FileShowType.EXTRA_CACHE_PATH) {
             it.tag = PathManager.manager().extraCachePath(FileType.ROOT)
             clickListener.onClick(it)
-        }).addItem(CommonListItemData.buildData(FileShowType.MEDIA_PATH) {
+        }).addItem(buildItemData(FileShowType.MEDIA_PATH) {
             it.tag = PathManager.manager().saveMediaPath()
             clickListener.onClick(it)
-        }).addItem(CommonListItemData.buildData(FileShowType.ROOT_DIRECTORY) {
+        }).addItem(buildItemData(FileShowType.ROOT_DIRECTORY) {
             it.tag = getSystemDirectoryInfo(Environment.getRootDirectory().absolutePath)
             clickListener.onClick(it)
-        }).addItem(CommonListItemData.buildData(FileShowType.DATA_DIRECTORY) {
+        }).addItem(buildItemData(FileShowType.DATA_DIRECTORY) {
             it.tag = getSystemDirectoryInfo(Environment.getDataDirectory().absolutePath)
             clickListener.onClick(it)
-        }).addItem(CommonListItemData.buildData(FileShowType.DOWNLOAD_CACHE_DIRECTORY) {
+        }).addItem(buildItemData(FileShowType.DOWNLOAD_CACHE_DIRECTORY) {
             it.tag = getSystemDirectoryInfo(Environment.getDownloadCacheDirectory().absolutePath)
             clickListener.onClick(it)
-        }).addItem(CommonListItemData.buildData(FileShowType.STORAGE_DIRECTORY) {
+        }).addItem(buildItemData(FileShowType.STORAGE_DIRECTORY) {
             val filePath = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 Environment.getStorageDirectory().absolutePath
             } else {
@@ -91,10 +88,16 @@ class ActivityFileManager : BaseActivity() {
             }
             it.tag = getSystemDirectoryInfo(filePath)
             clickListener.onClick(it)
-        }).addItem(CommonListItemData.buildData(FileShowType.EXTERNAL_STORAGE_DIRECTORY) {
+        }).addItem(buildItemData(FileShowType.EXTERNAL_STORAGE_DIRECTORY) {
             it.tag = getSystemDirectoryInfo(Environment.getExternalStorageDirectory().absolutePath)
             clickListener.onClick(it)
         }).refreshList()
+    }
+
+    private fun buildItemData(
+        showType: FileShowType, listener: View.OnClickListener
+    ): CommonListItemData {
+        return CommonListItemData.obj(showType.fileType, showType.info).clickListener(listener)
     }
 
     private fun getSystemDirectoryInfo(filePath: String): String {

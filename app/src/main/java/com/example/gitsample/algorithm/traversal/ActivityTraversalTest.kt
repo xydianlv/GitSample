@@ -4,16 +4,16 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
+import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityTraversalTestBinding
-import com.example.gitsample.widget.list.CommonListAdapter
+import com.example.widget.list.CommonListAdapter
 import com.example.multi.cell.ClassCellManager
+import com.example.widget.activity.BaseActivity
 
 /**
  * Created by wyyu on 2024/1/29.
  **/
-class ActivityTraversalTest : BaseActivity() {
+class ActivityTraversalTest : BaseActivity<ActivityTraversalTestBinding>() {
 
     companion object {
         @JvmStatic
@@ -25,20 +25,16 @@ class ActivityTraversalTest : BaseActivity() {
     private var listAdapter: CommonListAdapter<Class<out Any>, Any>? = null
     private val traversalList = ArrayList<TraversalItemData>()
 
-    private lateinit var binding: ActivityTraversalTestBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityTraversalTestBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        initActivity()
-    }
-
-    private fun initActivity() {
         initView()
         initList()
         loadList()
+    }
+
+    override fun getViewBinding(): ActivityTraversalTestBinding {
+        return ActivityTraversalTestBinding.inflate(layoutInflater)
     }
 
     private fun initView() {

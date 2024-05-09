@@ -11,7 +11,7 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.gitsample.R
 import com.example.gitsample.databinding.ActivityNoActionBarBinding
-import com.example.gitsample.utils.UIUtils
+import com.example.utils.UIUtils
 
 class ActivityNoActionBar : AppCompatActivity() {
 

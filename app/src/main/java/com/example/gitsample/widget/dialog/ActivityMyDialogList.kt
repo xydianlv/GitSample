@@ -4,16 +4,17 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.View.OnClickListener
 import androidx.appcompat.app.AlertDialog
 import com.example.gitsample.R
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
+import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityMyDialogListBinding
 import com.example.gitsample.databinding.LayoutMyAlertDialogBinding
-import com.example.gitsample.utils.ZToast
-import com.example.gitsample.widget.list.CommonListItemData
+import com.example.widget.view.ZToast
+import com.example.widget.activity.BaseActivity
+import com.example.widget.list.CommonListItemData
 
-class ActivityMyDialogList : BaseActivity() {
+class ActivityMyDialogList : BaseActivity<ActivityMyDialogListBinding>() {
 
     companion object {
 
@@ -23,19 +24,15 @@ class ActivityMyDialogList : BaseActivity() {
         }
     }
 
-    private lateinit var binding: ActivityMyDialogListBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMyDialogListBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        initActivity()
-    }
-
-    private fun initActivity() {
         initToolbar()
         initList()
+    }
+
+    override fun getViewBinding(): ActivityMyDialogListBinding {
+        return ActivityMyDialogListBinding.inflate(layoutInflater)
     }
 
     private fun initToolbar() {
@@ -43,15 +40,22 @@ class ActivityMyDialogList : BaseActivity() {
     }
 
     private fun initList() {
-        binding.list.addItem(CommonListItemData.buildData(DialogType.ALERT_DIALOG_SYSTEM) {
+        binding.list.addItem(buildItemData(DialogType.ALERT_DIALOG_SYSTEM) {
             showAlertDialog()
-        }).addItem(CommonListItemData.buildData(DialogType.ALERT_DIALOG_MY) {
+        }).addItem(buildItemData(DialogType.ALERT_DIALOG_MY) {
             showMAlertDialog()
-        }).addItem(CommonListItemData.buildData(DialogType.FULL_SCREEN_DIALOG) {
+        }).addItem(buildItemData(DialogType.FULL_SCREEN_DIALOG) {
             showMFullScreenDialog()
-        }).addItem(CommonListItemData.buildData(DialogType.INPUT_DIALOG) {
+        }).addItem(buildItemData(DialogType.INPUT_DIALOG) {
 
         }).refreshList()
+    }
+
+    private fun buildItemData(
+        dialogType: DialogType,
+        listener: OnClickListener
+    ): CommonListItemData {
+        return CommonListItemData.obj(dialogType.title, dialogType.info).clickListener(listener)
     }
 
     private fun showAlertDialog() {

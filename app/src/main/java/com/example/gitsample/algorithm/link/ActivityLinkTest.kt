@@ -3,17 +3,16 @@ package com.example.gitsample.algorithm.link
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.view.View.OnClickListener
+import com.example.base.PageType
 import com.example.gitsample.R
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
 import com.example.gitsample.databinding.ActivityLinkTestBinding
+import com.example.widget.activity.BaseActivity
 
 /**
  * Created by wyyu on 2024/2/20.
  **/
-class ActivityLinkTest : BaseActivity() {
+class ActivityLinkTest : BaseActivity<ActivityLinkTestBinding>() {
 
     companion object {
 
@@ -23,20 +22,17 @@ class ActivityLinkTest : BaseActivity() {
         }
     }
 
-    private lateinit var binding: ActivityLinkTestBinding
     private val rootNode = LinkUtils.buildLink()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLinkTestBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        initActivity()
-    }
-
-    private fun initActivity() {
         initView()
         initClick()
+    }
+
+    override fun getViewBinding(): ActivityLinkTestBinding {
+        return ActivityLinkTestBinding.inflate(layoutInflater)
     }
 
     private fun initView() {

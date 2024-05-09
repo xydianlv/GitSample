@@ -4,12 +4,12 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
+import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityViewModelTestBinding
+import com.example.widget.activity.BaseVMActivity
 import java.lang.StringBuilder
 
-class ActivityViewModelTest : BaseActivity() {
+class ActivityViewModelTest : BaseVMActivity<ViewModelTest, ActivityViewModelTestBinding>() {
 
     companion object {
 
@@ -18,8 +18,6 @@ class ActivityViewModelTest : BaseActivity() {
             context.startActivity(Intent(context, ActivityViewModelTest::class.java))
         }
     }
-
-    private lateinit var binding: ActivityViewModelTestBinding
 
     private val viewModelA: ViewModelTest by lazy {
         ViewModelProvider(this)[ViewModelTest::class.java]
@@ -34,16 +32,18 @@ class ActivityViewModelTest : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityViewModelTestBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        initActivity()
-    }
-
-    fun initActivity() {
         initToolbar()
         initViewModel()
         loadValue()
+    }
+
+    override fun getViewBinding(): ActivityViewModelTestBinding {
+        return ActivityViewModelTestBinding.inflate(layoutInflater)
+    }
+
+    override fun getVMClass(): Class<ViewModelTest> {
+        return ViewModelTest::class.java
     }
 
     private fun initToolbar() {
@@ -61,6 +61,10 @@ class ActivityViewModelTest : BaseActivity() {
         }
         viewModelB?.run("info from viewModelB") {
             infoMap["viewModelB"] = it
+            checkShow()
+        }
+        viewModel.run("info from viewModel") {
+            infoMap["viewModel"] = it
             checkShow()
         }
     }

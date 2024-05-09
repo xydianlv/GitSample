@@ -3,14 +3,14 @@ package com.example.gitsample.widget.text.span
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import com.example.base.PageType
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
 import com.example.gitsample.databinding.ActivityTextSpanTestBinding
-import com.example.gitsample.widget.list.CommonListAdapter
+import com.example.widget.list.CommonListAdapter
 import com.example.multi.cell.ClassCellManager
+import com.example.widget.activity.BaseActivity
 
-class ActivityTextSpanTest : BaseActivity() {
+class ActivityTextSpanTest : BaseActivity<ActivityTextSpanTestBinding>() {
 
     companion object {
 
@@ -21,28 +21,25 @@ class ActivityTextSpanTest : BaseActivity() {
     }
 
     private var adapter: CommonListAdapter<Class<out Any>, Any>? = null
-    private var binding: ActivityTextSpanTestBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityTextSpanTestBinding.inflate(layoutInflater)
-        setContentView(binding?.root)
 
-        initActivity()
-    }
-
-    private fun initActivity() {
         initToolbar()
         initList()
         loadList()
     }
 
+    override fun getViewBinding(): ActivityTextSpanTestBinding {
+        return ActivityTextSpanTestBinding.inflate(layoutInflater)
+    }
+
     private fun initToolbar() {
-        binding?.toolbar?.initShow(PageType.TEXT_SPAN.title)
+        binding.toolbar.initShow(PageType.TEXT_SPAN.title)
     }
 
     private fun initList() {
-        binding?.apply {
+        binding.apply {
             adapter = CommonListAdapter(ClassCellManager(), list)
             adapter!!.registerItem(SpanInfoData::class.java, SpanInfoHolder())
 

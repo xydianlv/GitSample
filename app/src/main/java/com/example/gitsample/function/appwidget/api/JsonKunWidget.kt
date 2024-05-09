@@ -1,7 +1,7 @@
 package com.example.gitsample.function.appwidget.api
 
-import com.example.gitsample.utils.TimeUtils
 import com.example.resource.R
+import com.example.utils.TimeUtils
 import com.google.gson.annotations.SerializedName
 
 data class JsonKunWidget(

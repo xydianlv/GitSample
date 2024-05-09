@@ -4,13 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
+import com.example.base.PageType
 import com.example.gitsample.databinding.ActivitySystemInfoBinding
-import com.example.gitsample.widget.list.CommonListAdapter
+import com.example.widget.list.CommonListAdapter
 import com.example.multi.cell.ClassCellManager
+import com.example.widget.activity.BaseActivity
 
-class ActivitySystemInfo : BaseActivity() {
+class ActivitySystemInfo : BaseActivity<ActivitySystemInfoBinding>() {
 
     companion object {
 
@@ -22,28 +22,24 @@ class ActivitySystemInfo : BaseActivity() {
 
     private var listAdapter: CommonListAdapter<Class<out Any>, Any>? = null
 
-    private var binding: ActivitySystemInfoBinding? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySystemInfoBinding.inflate(layoutInflater)
-        setContentView(binding?.root)
 
-        initActivity()
-    }
-
-    private fun initActivity() {
         initToolbar()
         initList()
         loadList()
     }
 
+    override fun getViewBinding(): ActivitySystemInfoBinding {
+        return ActivitySystemInfoBinding.inflate(layoutInflater)
+    }
+
     private fun initToolbar() {
-        binding?.toolbar?.initShow(PageType.SYSTEM_INFO.title)
+        binding.toolbar.initShow(PageType.SYSTEM_INFO.title)
     }
 
     private fun initList() {
-        binding?.apply {
+        binding.apply {
             listAdapter = CommonListAdapter(ClassCellManager(), list)
             listAdapter!!.registerItem(SystemInfoData::class.java, SystemInfoHolder())
 

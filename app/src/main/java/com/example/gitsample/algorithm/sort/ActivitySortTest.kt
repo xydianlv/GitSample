@@ -6,16 +6,16 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
+import com.example.base.PageType
 import com.example.gitsample.databinding.ActivitySortTestBinding
-import com.example.gitsample.widget.list.CommonListAdapter
 import com.example.multi.cell.ClassCellManager
+import com.example.widget.activity.BaseActivity
+import com.example.widget.list.CommonListAdapter
 
 /**
  * Created by wyyu on 2024/1/28.
  **/
-class ActivitySortTest : BaseActivity() {
+class ActivitySortTest : BaseActivity<ActivitySortTestBinding>() {
 
     companion object {
 
@@ -30,20 +30,15 @@ class ActivitySortTest : BaseActivity() {
     private var listAdapter: CommonListAdapter<Class<out Any>, Any>? = null
     private val sortList = ArrayList<SortItemData>()
 
-    private lateinit var binding: ActivitySortTestBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySortTestBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        initActivity()
-    }
-
-    private fun initActivity() {
         initView()
         initList()
         loadList()
+    }
+
+    override fun getViewBinding(): ActivitySortTestBinding {
+        return ActivitySortTestBinding.inflate(layoutInflater)
     }
 
     private fun initView() {

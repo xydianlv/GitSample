@@ -2,7 +2,7 @@ package com.example.gitsample.function.appwidget
 
 import android.os.Handler
 import android.os.Looper
-import com.example.gitsample.base.module.AnalyticManager
+import com.example.base.manager.AnalyticManager
 import com.example.gitsample.function.appwidget.api.JsonKunWidget
 import com.example.gitsample.function.appwidget.api.KunWidgetApi
 import com.example.gitsample.function.appwidget.api.OnLoadJsonListener

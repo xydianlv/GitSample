@@ -5,14 +5,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.example.gitsample.R
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
+import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityAppWidgetTestBinding
 import com.example.gitsample.function.appwidget.provider.KunWidgetType
-import com.example.gitsample.utils.TimeUtils
-import com.example.gitsample.utils.ZToast
+import com.example.utils.TimeUtils
+import com.example.widget.activity.BaseActivity
+import com.example.widget.view.ZToast
 
-class ActivityAppWidgetTest : BaseActivity() {
+class ActivityAppWidgetTest : BaseActivity<ActivityAppWidgetTestBinding>() {
 
     companion object {
 
@@ -24,25 +24,21 @@ class ActivityAppWidgetTest : BaseActivity() {
         private const val MAX_LOG_LENGTH = 52
     }
 
-    private lateinit var binding: ActivityAppWidgetTestBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAppWidgetTestBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        initActivity()
+        initToolbar()
+        initClick()
+        onRegisterLogListener()
+    }
+
+    override fun getViewBinding(): ActivityAppWidgetTestBinding {
+        return ActivityAppWidgetTestBinding.inflate(layoutInflater)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         KunWidgetUtils.registerLogListener(null)
-    }
-
-    private fun initActivity() {
-        initToolbar()
-        initClick()
-        onRegisterLogListener()
     }
 
     private fun initToolbar() {

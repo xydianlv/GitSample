@@ -14,9 +14,9 @@ import com.example.gitsample.function.appwidget.KunWidgetManager
 import com.example.gitsample.function.appwidget.KunWidgetUtils
 import com.example.gitsample.function.appwidget.api.KunBubble
 import com.example.gitsample.function.shortcut.ActivityShortcutTarget
-import com.example.gitsample.utils.ParamsBuilder
-import com.example.gitsample.utils.PendingIntentUtils
-import com.example.gitsample.utils.PendingType
+import com.example.utils.ParamsBuilder
+import com.example.utils.PendingIntentUtils
+import com.example.utils.PendingType
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

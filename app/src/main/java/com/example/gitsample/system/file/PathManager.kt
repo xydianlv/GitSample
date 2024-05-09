@@ -1,8 +1,9 @@
 package com.example.gitsample.system.file
 
 import android.os.Environment
-import com.example.gitsample.base.module.AnalyticManager
-import com.example.gitsample.base.Constants
+import com.example.base.FileType
+import com.example.base.manager.AnalyticManager
+import com.example.gitsample.base.AppConstants
 import java.io.File
 
 class PathManager private constructor() : IPath {
@@ -54,7 +55,7 @@ class PathManager private constructor() : IPath {
             checkPath(filePath)
         } else {
             val packageName = if (context == null) {
-                Constants.PACKAGE_NAME
+                AppConstants.PACKAGE_NAME
             } else {
                 context.packageName
             }
@@ -74,7 +75,7 @@ class PathManager private constructor() : IPath {
             checkPath(cachePath)
         } else {
             val packageName = if (context == null) {
-                Constants.PACKAGE_NAME
+                AppConstants.PACKAGE_NAME
             } else {
                 context.packageName
             }

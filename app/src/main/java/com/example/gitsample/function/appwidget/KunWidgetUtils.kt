@@ -5,14 +5,14 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.util.Log
-import com.example.gitsample.base.module.PreferencesManager
+import com.example.base.manager.PreferencesManager
 import com.example.gitsample.function.appwidget.provider.KunWidgetProviderBig
 import com.example.gitsample.function.appwidget.provider.KunWidgetProviderSmall
 import com.example.gitsample.function.appwidget.provider.KunWidgetType
 import com.example.gitsample.function.shortcut.ShortCutPermissionChecker
 import com.example.gitsample.function.shortcut.ShortcutConstants
-import com.example.gitsample.utils.ZLog
-import com.example.gitsample.utils.ZToast
+import com.example.utils.ZLog
+import com.example.widget.view.ZToast
 
 object KunWidgetUtils {
 

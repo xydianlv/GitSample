@@ -12,13 +12,13 @@ import androidx.core.content.pm.ShortcutInfoCompat
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
 import com.example.gitsample.R
-import com.example.gitsample.base.BaseActivity
-import com.example.gitsample.base.PageType
+import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityShortcutBinding
-import com.example.gitsample.utils.ZLog
-import com.example.gitsample.utils.ZToast
+import com.example.utils.ZLog
+import com.example.widget.view.ZToast
+import com.example.widget.activity.BaseActivity
 
-class ActivityShortcut : BaseActivity() {
+class ActivityShortcut : BaseActivity<ActivityShortcutBinding>() {
 
     companion object {
         @JvmStatic
@@ -27,14 +27,14 @@ class ActivityShortcut : BaseActivity() {
         }
     }
 
-    private lateinit var binding: ActivityShortcutBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityShortcutBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         initActivity()
+    }
+
+    override fun getViewBinding(): ActivityShortcutBinding {
+        return ActivityShortcutBinding.inflate(layoutInflater)
     }
 
     private fun initActivity() {

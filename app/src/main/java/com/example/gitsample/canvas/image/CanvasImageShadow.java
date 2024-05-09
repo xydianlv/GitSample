@@ -16,8 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
-import com.example.gitsample.utils.UIUtils;
 import com.example.resource.R;
+import com.example.utils.UIUtils;
 
 public class CanvasImageShadow extends View {
 

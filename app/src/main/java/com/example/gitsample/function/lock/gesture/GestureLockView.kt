@@ -10,10 +10,10 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import androidx.core.content.ContextCompat
-import com.example.gitsample.utils.UIUtils
-import com.example.gitsample.utils.ZLog
-import com.example.gitsample.utils.ZToast
+import com.example.utils.ZLog
+import com.example.widget.view.ZToast
 import com.example.resource.R
+import com.example.utils.UIUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
