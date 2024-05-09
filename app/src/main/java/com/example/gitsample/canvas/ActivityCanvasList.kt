@@ -44,7 +44,7 @@ class ActivityCanvasList : BaseActivity() {
         }).addItem(CommonListItemData.buildData(PageType.CANVAS_PATH) {
             ActivityCanvasShow.open(this, PageType.CANVAS_PATH)
         }).addItem(CommonListItemData.buildData(PageType.CANVAS_IMAGE) {
-
+            ActivityCanvasShow.open(this, PageType.CANVAS_IMAGE)
         }).addItem(CommonListItemData.buildData(PageType.CANVAS_X_FER_MODE) {
 
         }).refreshList()

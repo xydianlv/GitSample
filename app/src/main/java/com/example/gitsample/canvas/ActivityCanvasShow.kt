@@ -6,6 +6,8 @@ import android.os.Bundle
 import com.example.gitsample.base.BaseActivity
 import com.example.gitsample.base.PageType
 import com.example.gitsample.canvas.figure.CanvasFigureView
+import com.example.gitsample.canvas.image.CanvasImageShadow
+import com.example.gitsample.canvas.image.CanvasImageView
 import com.example.gitsample.canvas.path.CanvasPathView
 import com.example.gitsample.canvas.text.CanvasTextView
 import com.example.gitsample.databinding.ActivityCanvasShowBinding
@@ -57,6 +59,10 @@ class ActivityCanvasShow : BaseActivity() {
             }
             PageType.CANVAS_PATH -> {
                 CanvasPathView(this)
+            }
+            PageType.CANVAS_IMAGE -> {
+                CanvasImageShadow(this)
+//                CanvasImageView(this)
             }
             else -> {
                 null

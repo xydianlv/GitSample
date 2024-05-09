@@ -144,6 +144,9 @@
         <activity
             android:name=".widget.text.span.ActivityTextSpanTest"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".function.applayout.ActivityAppLayoutTest"
+            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".function.shortcut.ShortcutReceiver"

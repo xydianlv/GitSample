@@ -38,6 +38,7 @@ enum class PageType(val title: String, val info: String) {
     SHORTCUT("Shortcut", "桌面快捷方式"),
     SHORTCUT_TARGET("ShortcutTarget", "桌面快捷方式跳转界面"),
     APP_WIDGET("AppWidgetTest", "桌面组件"),
+    APP_LAYOUT("AppLayoutTest", "吸顶组件展示测试"),
 
     // WIDGET 下面的跳转界面
     DIALOG("Dialog", "各种样式的Dialog"),
