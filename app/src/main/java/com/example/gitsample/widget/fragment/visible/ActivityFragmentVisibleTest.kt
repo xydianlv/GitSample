@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityFragmentVisibleTestBinding
-import com.example.gitsample.widget.fragment.frag.FragmentPagerAdapter
 import com.example.widget.activity.BaseActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator

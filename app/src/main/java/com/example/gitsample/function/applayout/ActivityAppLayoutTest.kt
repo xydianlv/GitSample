@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.example.gitsample.databinding.ActivityAppLayoutTestBinding
-import com.example.gitsample.function.applayout.fragment.FragmentPagerAdapter
 import com.example.widget.activity.BaseActivity
 
 class ActivityAppLayoutTest : BaseActivity<ActivityAppLayoutTestBinding>() {

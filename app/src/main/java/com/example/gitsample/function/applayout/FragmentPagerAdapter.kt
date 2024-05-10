@@ -1,4 +1,4 @@
-package com.example.gitsample.function.applayout.fragment
+package com.example.gitsample.function.applayout
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
