@@ -16,13 +16,16 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:layout_width="0.0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/padding_12"
-        android:text="@string/app_name"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/text_long_cn"
         android:textColor="@color/ct_1"
         android:textSize="@dimen/text_15"
         app:layout_constraintBottom_toTopOf="@id/info"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/avatar"
         app:layout_constraintTop_toTopOf="@id/avatar" />
 
@@ -30,7 +33,7 @@
         android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:text="@string/text_short_cn"
         android:textColor="@color/ct_3"
         android:textSize="@dimen/text_12"
         app:layout_constraintBottom_toBottomOf="@id/avatar"

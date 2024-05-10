@@ -1,11 +1,11 @@
-package com.example.gitsample.widget.fragment.frag
+package com.example.widget.fragment.list
 
 import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.gitsample.R
+import com.example.widget.R
 
-class ListItemHolder(itemView: View) : ViewHolder(itemView) {
+class ListHolder(itemView: View) : ViewHolder(itemView) {
 
     companion object {
 
