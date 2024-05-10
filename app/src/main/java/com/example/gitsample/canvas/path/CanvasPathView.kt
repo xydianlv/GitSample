@@ -8,6 +8,7 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
+import com.example.resource.R
 import com.example.utils.UIUtils
 
 class CanvasPathView(
@@ -28,7 +29,7 @@ class CanvasPathView(
         // 线条宽度
         paint.strokeWidth = UIUtils.dpToPx(1.0f) * 1.0f
         // 线条颜色
-        paint.color = ContextCompat.getColor(context, com.example.gitsample.R.color.ct_1)
+        paint.color = ContextCompat.getColor(context, R.color.ct_1)
     }
 
     override fun onDraw(canvas: Canvas) {

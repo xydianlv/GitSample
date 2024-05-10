@@ -6,6 +6,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
+import com.example.resource.R
 import com.example.utils.UIUtils
 
 class CanvasTextView : View {
@@ -43,12 +44,12 @@ class CanvasTextView : View {
 
         refreshArray(0)
         // 提示线的色值
-        paint.color = ContextCompat.getColor(context, com.example.gitsample.R.color.color_alert)
+        paint.color = ContextCompat.getColor(context, R.color.color_alert)
         // 绘制第一行文字的基准线（起点坐标X，起点坐标Y，终点坐标X，终点坐标Y，画笔）
         canvas.drawLine(array[0], array[1], array[0] + halfScreen, array[1], paint)
 
         // 文字色值
-        paint.color = ContextCompat.getColor(context, com.example.gitsample.R.color.ct_1)
+        paint.color = ContextCompat.getColor(context, R.color.ct_1)
         // 画笔风格，空心
         paint.style = Paint.Style.STROKE
         // 绘制一段空心文字（绘制的文案，基准点坐标X，基准点坐标Y，画笔），基准点位于文字的左下角

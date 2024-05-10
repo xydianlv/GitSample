@@ -2,11 +2,10 @@ package com.example.gitsample.widget.dialog
 
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
-import android.view.Gravity
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AlertDialog
-import com.example.gitsample.R
+import com.example.resource.R
 
 class MFullScreenDialog(context: Context) {
 

@@ -8,7 +8,7 @@ import android.os.Environment
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.base.FileType
-import com.example.gitsample.R
+import com.example.resource.R
 import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityFileManagerBinding
 import com.example.utils.MemoryUtils
@@ -42,7 +42,7 @@ class ActivityFileManager : BaseActivity<ActivityFileManagerBinding>() {
 
     private fun initView() {
         binding.alert.setOnClickListener {
-            binding.alert.text = resources.getText(R.string.path_manager_alert)
+            binding.alert.text = resources.getText(com.example.gitsample.R.string.path_manager_alert)
             binding.alert.setTextColor(ContextCompat.getColor(this, R.color.ct_3))
         }
     }

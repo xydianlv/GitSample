@@ -3,7 +3,7 @@ package com.example.gitsample.system.permission
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import com.example.gitsample.R
+import com.example.resource.R
 import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityPermissionCheckBinding
 import com.example.widget.view.ZToast
@@ -95,9 +95,9 @@ class ActivityPermissionCheck : BaseActivity<ActivityPermissionCheckBinding>() {
         typeIntMap[type] = permissionValue
         data.alert = resources.getString(
             if (permissionValue == 1) {
-                R.string.permission_has_request
+                com.example.gitsample.R.string.permission_has_request
             } else {
-                R.string.permission_to_request
+                com.example.gitsample.R.string.permission_to_request
             }
         )
         data.alertColor = if (permissionValue == 1) {

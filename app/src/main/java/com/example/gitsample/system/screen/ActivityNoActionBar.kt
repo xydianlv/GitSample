@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.gitsample.R
+import com.example.resource.R
 import com.example.gitsample.databinding.ActivityNoActionBarBinding
 import com.example.utils.UIUtils
 

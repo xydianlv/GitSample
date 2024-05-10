@@ -59,7 +59,7 @@ class GestureLockView : View {
         // 线条宽度
         paint.strokeWidth = 4.0f
         // 线条颜色
-        paint.color = ContextCompat.getColor(context, com.example.gitsample.R.color.color_lock_n)
+        paint.color = ContextCompat.getColor(context, R.color.color_lock_n)
     }
 
     private fun initNodeList() {
@@ -123,7 +123,7 @@ class GestureLockView : View {
         }
         drawIndexList.clear()
 
-        paint.color = ContextCompat.getColor(context, com.example.gitsample.R.color.color_lock_n)
+        paint.color = ContextCompat.getColor(context, R.color.color_lock_n)
         path.reset()
 
         drawType = 0
@@ -208,7 +208,7 @@ class GestureLockView : View {
             ZToast.show("解锁成功")
         } else {
             drawType = -1
-            val color = ContextCompat.getColor(context, com.example.gitsample.R.color.color_lock_f)
+            val color = ContextCompat.getColor(context, R.color.color_lock_f)
             for (index in drawIndexList) {
                 nodeList[index].resId = R.mipmap.img_lock_fail
                 paint.color = color

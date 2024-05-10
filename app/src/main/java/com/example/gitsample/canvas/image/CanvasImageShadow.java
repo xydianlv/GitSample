@@ -59,8 +59,8 @@ public class CanvasImageShadow extends View {
 
         linearGradient = new LinearGradient(0, drawHeight * 1.0f / 3, 0, drawHeight * 2.0f / 3, 0, pixel, Shader.TileMode.CLAMP);
 
-        int colorStart = ContextCompat.getColor(getContext(), com.example.gitsample.R.color.color_33212121);
-        int colorEnd = ContextCompat.getColor(getContext(), com.example.gitsample.R.color.color_FF1D1D1D);
+        int colorStart = ContextCompat.getColor(getContext(), R.color.color_33212121);
+        int colorEnd = ContextCompat.getColor(getContext(), R.color.color_FF1D1D1D);
         topShadow = new LinearGradient(0, 0, 0, drawHeight, colorStart, colorEnd, Shader.TileMode.CLAMP);
     }
 

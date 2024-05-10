@@ -1,9 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
 
-    <string name="app_name">GitSample</string>
-
-    <string name="image">Image</string>
-
     <string name="gesture_lock_alert">密码提示</string>
 
     <string name="permission_to_request">去开启</string>
