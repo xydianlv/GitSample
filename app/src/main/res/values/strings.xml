@@ -43,4 +43,6 @@
 
     <string name="algorithm_link_re_change">ReChange</string>
 
+    <string name="function_app_layout_to_top">一键吸顶</string>
+
 </resources>
