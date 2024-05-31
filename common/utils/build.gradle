@@ -43,4 +43,5 @@ dependencies {
 
     // 支持模块儿
     implementation project(":common:base")
+    implementation project(":resource")
 }

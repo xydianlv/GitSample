@@ -153,6 +153,9 @@
         <activity
             android:name=".widget.fragment.visible.ActivityFragmentVisibleTest"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".widget.tab.ActivityTabLayoutTest"
+            android:screenOrientation="portrait"/>
 
         <receiver
             android:name=".function.shortcut.ShortcutReceiver"

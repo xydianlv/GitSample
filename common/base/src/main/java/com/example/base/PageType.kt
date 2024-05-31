@@ -41,9 +41,10 @@ enum class PageType(val title: String, val info: String) {
     APP_LAYOUT("AppLayoutTest", "吸顶组件展示测试"),
 
     // WIDGET 下面的跳转界面
-    DIALOG("Dialog", "Dialog展示样式集合"),
-    TEXT_VIEW("TextView", "文字控件展示效果集合"),
-    FRAGMENT("Fragment", "Fragment展示集合"),
+    DIALOG("DialogTest", "Dialog展示样式集合"),
+    TEXT_VIEW("TextViewTest", "文字控件展示效果集合"),
+    FRAGMENT("FragmentTest", "Fragment展示集合"),
+    TAB_LAYOUT("TabLayoutTest", "TabLayout展示样式集合"),
 
     // TEXT_VIEW 下面的跳转界面
     TEXT_SPAN("TextSpanTest", "文字Span展示测试"),

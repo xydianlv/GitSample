@@ -26,6 +26,6 @@ abstract class BaseFragment<vb : ViewBinding> : Fragment() {
     abstract fun getViewBinding(inflater: LayoutInflater): vb
 
     open fun initView() {
-
+        // 初始化 View
     }
 }
