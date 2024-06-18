@@ -15,7 +15,7 @@ data class KunWidgetParams(
     val callback: OnResCallback
 ) {
     companion object {
-        const val LAYOUT_BUBBLE = R.layout.layout_kun_bubble_0_0
+        val LAYOUT_BUBBLE = R.layout.layout_kun_bubble_0_0
     }
 }
 

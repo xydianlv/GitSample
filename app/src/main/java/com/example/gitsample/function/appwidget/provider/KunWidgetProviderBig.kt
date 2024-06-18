@@ -34,7 +34,7 @@ class KunWidgetProviderBig : AppWidgetProvider() {
             R.layout.layout_kun_bubble_25_1800
         )
 
-        private const val LAYOUT_WIDGET = R.layout.layout_kun_widget_big
+        private val LAYOUT_WIDGET = R.layout.layout_kun_widget_big
     }
 
     override fun onUpdate(context: Context?, manager: AppWidgetManager?, idArray: IntArray?) {

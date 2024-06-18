@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:startDestination="@id/frag_00">
+
+    <fragment
+        android:id="@+id/frag_00"
+        android:name="com.example.widget.fragment.text.FragmentTestText"
+        android:label="FragmentTestText"
+        tools:layout="@layout/fragment_test_text">
+
+        <action
+            android:id="@+id/next_01"
+            app:destination="@+id/frag_01" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/frag_01"
+        android:name="com.example.widget.fragment.text.FragmentTestText"
+        android:label="FragmentTestText"
+        tools:layout="@layout/fragment_test_text">
+
+        <action
+            android:id="@+id/next_02"
+            app:destination="@+id/frag_02" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/frag_02"
+        android:name="com.example.widget.fragment.text.FragmentTestText"
+        android:label="FragmentTestText"
+        tools:layout="@layout/fragment_test_text" />
+
+</navigation>

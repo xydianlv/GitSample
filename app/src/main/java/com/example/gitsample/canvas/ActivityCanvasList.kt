@@ -41,6 +41,8 @@ class ActivityCanvasList : BaseActivity<ActivityCanvasListBinding>() {
             ActivityCanvasShow.open(this, PageType.CANVAS_PATH)
         }).addItem(CommonListItemData.obj(PageType.CANVAS_IMAGE).clickListener {
             ActivityCanvasShow.open(this, PageType.CANVAS_IMAGE)
+        }).addItem(CommonListItemData.obj(PageType.CANVAS_SHADOW).clickListener {
+            ActivityCanvasShow.open(this, PageType.CANVAS_SHADOW)
         }).addItem(CommonListItemData.obj(PageType.CANVAS_X_FER_MODE).clickListener {
 
         }).refreshList()

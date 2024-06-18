@@ -28,7 +28,7 @@ class KunWidgetProviderSmall : AppWidgetProvider() {
             R.layout.layout_kun_bubble_25_2000,
         )
 
-        private const val LAYOUT_WIDGET = R.layout.layout_kun_widget_small
+        private val LAYOUT_WIDGET = R.layout.layout_kun_widget_small
     }
 
     override fun onUpdate(context: Context?, manager: AppWidgetManager?, idArray: IntArray?) {

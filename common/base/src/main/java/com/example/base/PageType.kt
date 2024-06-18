@@ -28,6 +28,7 @@ enum class PageType(val title: String, val info: String) {
     CANVAS_TEXT("CanvasText", "Canvas 绘制文字"),
     CANVAS_PATH("CanvasPath", "Canvas 绘制路径"),
     CANVAS_IMAGE("CanvasImage", "Canvas 绘制图片"),
+    CANVAS_SHADOW("CanvasShadow", "Canvas 绘制图片&阴影"),
     CANVAS_X_FER_MODE("CanvasXFerMode", "Canvas 绘制时添加特效"),
 
     // FUNCTION 下面的跳转界面
@@ -51,6 +52,7 @@ enum class PageType(val title: String, val info: String) {
 
     // FRAGMENT 下面的跳转界面
     FRAGMENT_VISIBLE_TEST("FragmentVisibleTest", "Fragment可见性测试"),
+    FRAGMENT_NAVIGATION_TEST("FragmentNavigationTest", "Navigation-Fragment测试"),
 
     // ALGORITHM 下面的跳转界面
     SORT("SortTest", "常见的排序算法"),

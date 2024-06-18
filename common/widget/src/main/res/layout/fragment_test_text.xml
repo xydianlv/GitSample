@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/height_toolbar"
         android:textColor="@color/ct_2"
-        android:textSize="@dimen/text_15"
+        android:textSize="@dimen/text_18"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
