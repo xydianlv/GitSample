@@ -1,6 +1,7 @@
 package com.example.widget.fragment
 
 import android.content.Context
+import android.os.Bundle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
@@ -15,4 +16,13 @@ abstract class BaseVMFragment<vb : ViewBinding, vm : ViewModel> : BaseFragment<v
     }
 
     abstract fun getViewModelClass(): Class<vm>
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        initData()
+    }
+
+    open fun initData() {
+        // 初始化 Data
+    }
 }

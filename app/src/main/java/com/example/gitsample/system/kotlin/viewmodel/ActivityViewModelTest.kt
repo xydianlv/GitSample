@@ -9,7 +9,7 @@ import com.example.gitsample.databinding.ActivityViewModelTestBinding
 import com.example.widget.activity.BaseVMActivity
 import java.lang.StringBuilder
 
-class ActivityViewModelTest : BaseVMActivity<ViewModelTest, ActivityViewModelTestBinding>() {
+class ActivityViewModelTest : BaseVMActivity<ActivityViewModelTestBinding, ViewModelTest>() {
 
     companion object {
 

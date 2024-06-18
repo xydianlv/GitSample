@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseVMActivity<vm : ViewModel, vb : ViewBinding> : BaseActivity<vb>() {
+abstract class BaseVMActivity<vb : ViewBinding, vm : ViewModel> : BaseActivity<vb>() {
 
     protected lateinit var viewModel: vm
 
