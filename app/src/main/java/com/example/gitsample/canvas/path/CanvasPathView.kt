@@ -23,6 +23,9 @@ class CanvasPathView(
     private val rect = RectF()
     private val path = Path()
 
+    private val pathArc = Path()
+    private val rectArc = RectF()
+
     init {
         // 抗锯齿
         paint.isAntiAlias = true
@@ -74,6 +77,22 @@ class CanvasPathView(
         path.addRect(rect, Path.Direction.CCW)
         // 画一个框框（路径，画笔）
         canvas.drawPath(path, paint)
+
+        refreshArray(10)
+        pathArc.moveTo(array[0], array[1])
+        pathArc.lineTo(array[0], array[1] + sizeDivide * 2)
+        rectArc.set(array[0],array[1] +sizeDivide ,array[0] + sizeDivide *2,array[1] + sizeDivide*3)
+        // startAngle：开始的角度
+        // sweepAngle：从 startAngle 开始旋转的度数，顺时针为正值，逆时针为负值
+        pathArc.arcTo(rectArc,180.0f,-90.0f)
+        pathArc.lineTo(array[0] + sizeDivide * 2, array[1] + sizeDivide * 3)
+        rectArc.set(array[0] + sizeDivide,array[1] +sizeDivide ,array[0] + sizeDivide *3,array[1] + sizeDivide*3)
+        // startAngle：开始的角度
+        // sweepAngle：从 startAngle 开始旋转的度数，顺时针为正值，逆时针为负值
+        pathArc.arcTo(rectArc,90.0f,-55.0f)
+        pathArc.lineTo(array[0] + sizeDivide * 4, array[1])
+        pathArc.close()
+        canvas.drawPath(pathArc, paint)
     }
 
     private fun refreshArray(index: Int) {

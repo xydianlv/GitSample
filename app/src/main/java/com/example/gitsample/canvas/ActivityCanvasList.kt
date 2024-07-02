@@ -39,6 +39,8 @@ class ActivityCanvasList : BaseActivity<ActivityCanvasListBinding>() {
             ActivityCanvasShow.open(this, PageType.CANVAS_TEXT)
         }).addItem(CommonListItemData.obj(PageType.CANVAS_PATH).clickListener {
             ActivityCanvasShow.open(this, PageType.CANVAS_PATH)
+        }).addItem(CommonListItemData.obj(PageType.CANVAS_PATH_SWITCH).clickListener {
+            ActivityCanvasShow.open(this, PageType.CANVAS_PATH_SWITCH)
         }).addItem(CommonListItemData.obj(PageType.CANVAS_IMAGE).clickListener {
             ActivityCanvasShow.open(this, PageType.CANVAS_IMAGE)
         }).addItem(CommonListItemData.obj(PageType.CANVAS_SHADOW).clickListener {

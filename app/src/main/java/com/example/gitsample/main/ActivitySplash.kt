@@ -23,7 +23,7 @@ class ActivitySplash : AppCompatActivity() {
         super.onResume()
 
         lifecycleScope.launch {
-            delay(1000L)
+            delay(10L)
             startActivity(Intent(this@ActivitySplash, MainActivity::class.java))
             finish()
         }

@@ -38,6 +38,8 @@
 
     <color name="color_33212121">#33212121</color>
     <color name="color_FF1D1D1D">#FF1D1D1D</color>
+    <color name="color_FFFFB27F">#FFFFB27F</color>
+    <color name="color_FFFFE4D6">#FFFFE4D6</color>
 
     <!--占位色值-->
     <color name="color_holder_FFE7DAC9">#66E7DAC9</color>

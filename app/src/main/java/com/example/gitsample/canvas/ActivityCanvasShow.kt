@@ -7,6 +7,7 @@ import com.example.base.PageType
 import com.example.gitsample.canvas.figure.CanvasFigureView
 import com.example.gitsample.canvas.image.CanvasImageShadow
 import com.example.gitsample.canvas.image.CanvasImageView
+import com.example.gitsample.canvas.path.CanvasPathSwitchLayout
 import com.example.gitsample.canvas.path.CanvasPathView
 import com.example.gitsample.canvas.text.CanvasTextView
 import com.example.gitsample.databinding.ActivityCanvasShowBinding
@@ -65,6 +66,10 @@ class ActivityCanvasShow : BaseActivity<ActivityCanvasShowBinding>() {
 
             PageType.CANVAS_SHADOW -> {
                 CanvasImageShadow(this)
+            }
+
+            PageType.CANVAS_PATH_SWITCH -> {
+                CanvasPathSwitchLayout(this)
             }
 
             else -> {
