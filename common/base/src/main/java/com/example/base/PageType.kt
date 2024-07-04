@@ -17,6 +17,7 @@ enum class PageType(val title: String, val info: String) {
     SCREEN_TEST("ScreenTest", "屏幕展示样式，状态栏、全屏等"),
     SYSTEM_INFO("SystemInfo", "手机相关的所有信息"),
     KOTLIN_TEST("KotlinTest", "Kotlin 协程相关总结"),
+    ANR_TEST("ANRTest", "ANR 相关测试梳理"),
 
     // KOTLIN 下面的跳转界面
     KOTLIN_COROUTINE_TEST("KotlinCoroutineTest", "Kotlin 协程相关总结"),

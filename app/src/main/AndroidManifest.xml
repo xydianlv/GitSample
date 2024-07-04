@@ -11,7 +11,9 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /><!-- 精确位置 -->
     <!-- 摄像头权限 -->
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
     <!-- 麦克风权限 -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <!-- 壁纸权限 -->
@@ -122,10 +124,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".system.kotlin.viewmodel.ActivityViewModelTest"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".system.kotlin.tlfunction.ActivityTopLevelFunction"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".algorithm.ActivityAlgorithmList"
             android:screenOrientation="portrait" />
@@ -149,16 +151,19 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".widget.fragment.ActivityFragmentTest"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".widget.fragment.visible.ActivityFragmentVisibleTest"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".widget.fragment.navigation.ActivityNavigationTest"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".widget.tab.ActivityTabLayoutTest"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".system.anr.ActivityAnrTest"
+            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".function.shortcut.ShortcutReceiver"
@@ -194,6 +199,8 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/app_kun_widget_big" />
         </receiver>
+
+        <service android:name=".system.anr.AnrTestService"/>
 
     </application>
 

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.example.base.PageType
 import com.example.gitsample.databinding.ActivitySystemListBinding
+import com.example.gitsample.system.anr.ActivityAnrTest
 import com.example.gitsample.system.file.ActivityFileManager
 import com.example.gitsample.system.info.ActivitySystemInfo
 import com.example.gitsample.system.kotlin.ActivityKotlinTest
@@ -48,6 +49,8 @@ class ActivitySystemList : BaseActivity<ActivitySystemListBinding>() {
             ActivitySystemInfo.open(this)
         }).addItem(CommonListItemData.obj(PageType.KOTLIN_TEST).clickListener {
             ActivityKotlinTest.open(this)
+        }).addItem(CommonListItemData.obj(PageType.ANR_TEST).clickListener {
+            ActivityAnrTest.open(this)
         }).refreshList()
     }
 }
