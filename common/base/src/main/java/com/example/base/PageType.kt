@@ -48,6 +48,7 @@ enum class PageType(val title: String, val info: String) {
     TEXT_VIEW("TextViewTest", "文字控件展示效果集合"),
     FRAGMENT("FragmentTest", "Fragment展示集合"),
     TAB_LAYOUT("TabLayoutTest", "TabLayout展示样式集合"),
+    SHADOW_LAYOUT("ShadowLayoutTest", "带阴影的ViewGroup实现"),
 
     // TEXT_VIEW 下面的跳转界面
     TEXT_SPAN("TextSpanTest", "文字Span展示测试"),

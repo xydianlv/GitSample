@@ -164,6 +164,9 @@
         <activity
             android:name=".system.anr.ActivityAnrTest"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".widget.shadow.ActivityShadowLayoutTest"
+            android:screenOrientation="portrait"/>
 
         <receiver
             android:name=".function.shortcut.ShortcutReceiver"

@@ -7,6 +7,7 @@ import com.example.base.PageType
 import com.example.gitsample.databinding.ActivityWidgetListBinding
 import com.example.gitsample.widget.dialog.ActivityMyDialogList
 import com.example.gitsample.widget.fragment.ActivityFragmentTest
+import com.example.gitsample.widget.shadow.ActivityShadowLayoutTest
 import com.example.gitsample.widget.tab.ActivityTabLayoutTest
 import com.example.gitsample.widget.text.ActivityTextViewTest
 import com.example.widget.activity.BaseActivity
@@ -46,6 +47,8 @@ class ActivityWidgetList : BaseActivity<ActivityWidgetListBinding>() {
             ActivityFragmentTest.open(this)
         }).addItem(CommonListItemData.obj(PageType.TAB_LAYOUT).clickListener {
             ActivityTabLayoutTest.open(this)
+        }).addItem(CommonListItemData.obj(PageType.SHADOW_LAYOUT).clickListener {
+            ActivityShadowLayoutTest.open(this)
         }).refreshList()
     }
 }
