@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/padding_14"
+    android:paddingTop="20.0dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_opt_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:minWidth="80.0dp"
+        android:textColor="@color/ct_1"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Alpha" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="0.0dp"
+        android:layout_height="20.0dp"
+        android:max="100"
+        android:progressDrawable="@drawable/bg_alert_seek_bar"
+        android:thumb="@drawable/bg_alert_seek_bar_thumb"
+        app:layout_constraintBottom_toBottomOf="@id/tv_opt_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_opt_name"
+        app:layout_constraintTop_toTopOf="@id/tv_opt_name"
+        tools:progress="60" />
+
+    <View
+        android:layout_width="0.0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="20.0dp"
+        android:background="@color/color_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_opt_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
