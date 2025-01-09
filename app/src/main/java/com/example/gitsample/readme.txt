@@ -14,6 +14,7 @@ canvas:figure           : 通过 canvas 绘制几何图形
 canvas:image            : 通过 canvas 绘制图片
 canvas:path             : 通过 canvas 绘制路径
 canvas:text             : 通过 canvas 绘制文案
+canvas:line             : 通过 canvas 绘制一条虚线
 
 function                : 一些小功能
 function:applayout      : 通过 AppbarLayout 实现吸顶效果
