@@ -31,6 +31,7 @@ enum class PageType(val title: String, val info: String) {
     CANVAS_PATH_SWITCH("CanvasPathSwitch", "Canvas 可切换路径"),
     CANVAS_IMAGE("CanvasImage", "Canvas 绘制图片"),
     CANVAS_SHADOW("CanvasShadow", "Canvas 绘制图片&阴影"),
+    CANVAS_LINE("CanvasLine", "Canvas 线条&虚线"),
     CANVAS_X_FER_MODE("CanvasXFerMode", "Canvas 绘制时添加特效"),
 
     // FUNCTION 下面的跳转界面
