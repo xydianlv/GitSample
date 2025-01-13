@@ -8,6 +8,7 @@ import com.example.gitsample.databinding.ActivitySystemListBinding
 import com.example.gitsample.system.anr.ActivityAnrTest
 import com.example.gitsample.system.file.ActivityFileManager
 import com.example.gitsample.system.info.ActivitySystemInfo
+import com.example.gitsample.system.jar.ActivityJarTest
 import com.example.gitsample.system.kotlin.ActivityKotlinTest
 import com.example.gitsample.system.permission.ActivityPermissionCheck
 import com.example.gitsample.system.screen.ActivityScreenTest
@@ -51,6 +52,8 @@ class ActivitySystemList : BaseActivity<ActivitySystemListBinding>() {
             ActivityKotlinTest.open(this)
         }).addItem(CommonListItemData.obj(PageType.ANR_TEST).clickListener {
             ActivityAnrTest.open(this)
+        }).addItem(CommonListItemData.obj(PageType.JAR_TEST).clickListener {
+            ActivityJarTest.open(this)
         }).refreshList()
     }
 }

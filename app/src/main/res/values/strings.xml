@@ -45,4 +45,7 @@
 
     <string name="function_app_layout_to_top">一键吸顶</string>
 
+    <string name="system_jar_test_show_toast">ShowToast</string>
+    <string name="system_jar_test_load_jar">LoadJar</string>
+
 </resources>
