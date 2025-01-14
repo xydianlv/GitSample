@@ -3,13 +3,13 @@ package com.example.gitsample.system.jar.utils
 import android.content.Context
 import com.example.base.FileType
 import com.example.gitsample.system.file.PathManager
-import com.example.gitsample.system.jar.build.IJarLoader
+import com.example.gitsample.system.jar.test.IJarLoader
 import com.example.widget.view.ZToast
 import dalvik.system.DexClassLoader
 import java.io.File
 import java.lang.Exception
 
-object JarLoadUtils {
+object JarKtLoadUtils {
 
     fun loadJarFile(context: Context, jarType: JarType) {
         try {

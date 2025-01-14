@@ -47,5 +47,7 @@
 
     <string name="system_jar_test_show_toast">ShowToast</string>
     <string name="system_jar_test_load_jar">LoadJar</string>
+    <string name="system_jar_test_load_jar_dex">LoadJarDex</string>
+    <string name="system_jar_test_load_jar_kotlin">LoadJarKotlin</string>
 
 </resources>
