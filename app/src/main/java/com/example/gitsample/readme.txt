@@ -36,6 +36,7 @@ system:info             : 手机系统/机型信息
 system:jar              : 生成 .jar 文件，并通过 File 加载，实现动态化
 system:kotlin           : Kotlin 的一些写法
 system:permission       : 权限申请
+system:proto            : 通过 ProtocolBuffers 序列化数据对象
 system:screen           : 界面/全屏/状态栏展示
 
 third                   : 第三方库的自己实现
