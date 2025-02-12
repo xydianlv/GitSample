@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.widget.view.CommonToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_toolbar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scroll_top"
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_save"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:id="@+id/ll_container_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.example.gitsample.system.proto.ProtoTestItemView
+                android:id="@+id/item_00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <com.example.gitsample.system.proto.ProtoTestItemView
+                android:id="@+id/item_01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <com.example.gitsample.system.proto.ProtoTestItemView
+                android:id="@+id/item_02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <com.example.gitsample.system.proto.ProtoTestItemView
+                android:id="@+id/item_03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <com.example.gitsample.system.proto.ProtoTestItemView
+                android:id="@+id/item_04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_save"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_toolbar"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/padding_14"
+        android:text="@string/text_short_cn"
+        android:textColor="@color/color_alert"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintBottom_toTopOf="@id/tv_load"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <ScrollView
+        android:id="@+id/scroll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_load"
+        app:layout_constraintTop_toBottomOf="@id/tv_save">
+
+        <LinearLayout
+            android:id="@+id/ll_container_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_load"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_toolbar"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/padding_14"
+        android:text="@string/text_short_cn"
+        android:textColor="@color/color_alert"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <View
+        style="@style/my_divide_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_save" />
+
+    <View
+        style="@style/my_divide_line"
+        app:layout_constraintBottom_toBottomOf="@id/tv_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        style="@style/my_divide_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_load" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

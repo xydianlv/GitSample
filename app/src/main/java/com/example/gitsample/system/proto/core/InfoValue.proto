@@ -1,0 +1,29 @@
+//指定 Protobuf 版本
+syntax = "proto3";
+
+//指定包名
+package proto;
+
+// 生成的 Java 包名
+option java_package = "com.example.gitsample.system.proto.data";
+// 是否以多文件方式生成 Java 文件
+option java_multiple_files = false;
+// 生成 Lite 版本代码，Android 推荐
+option optimize_for = LITE_RUNTIME;
+
+message InfoValue {
+  int32 index = 1;
+  string infoValue = 2;
+}
+
+message InfoValueList {
+  // 对象列表
+  repeated InfoValue infoList = 1;
+}
+
+// 通过如下命令，可在 /app/src/main/java/com/example/gitsample/system/proto/data 目录下生成 InfoValueOuterClass.java 文件
+// protoc --java_out=lite:./app/src/main/java ./app/src/main/java/com/example/gitsample/system/proto/core/InfoValue.proto
+
+// protoc 命令需要在本地环境变量中进行配置
+// 下载地址：https://github.com/protocolbuffers/protobuf/releases，其中 osx 为 mac 版本
+// 版本映射表：https://protobuf.dev/support/version-support/，注意看 Java 的版本值

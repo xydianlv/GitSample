@@ -58,6 +58,9 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:2.7.7"
     implementation "androidx.navigation:navigation-ui-ktx:2.7.7"
 
+    // protobuf
+    implementation "com.google.protobuf:protobuf-javalite:4.29.3"
+
     // 资源子模块儿
     implementation project(":resource")
 

@@ -11,6 +11,7 @@ import com.example.gitsample.system.info.ActivitySystemInfo
 import com.example.gitsample.system.jar.ActivityJarTest
 import com.example.gitsample.system.kotlin.ActivityKotlinTest
 import com.example.gitsample.system.permission.ActivityPermissionCheck
+import com.example.gitsample.system.proto.ActivityProtoTest
 import com.example.gitsample.system.screen.ActivityScreenTest
 import com.example.widget.activity.BaseActivity
 import com.example.widget.list.CommonListItemData
@@ -54,6 +55,8 @@ class ActivitySystemList : BaseActivity<ActivitySystemListBinding>() {
             ActivityAnrTest.open(this)
         }).addItem(CommonListItemData.obj(PageType.JAR_TEST).clickListener {
             ActivityJarTest.open(this)
+        }).addItem(CommonListItemData.obj(PageType.PROTO_TEST).clickListener {
+            ActivityProtoTest.open(this)
         }).refreshList()
     }
 }
