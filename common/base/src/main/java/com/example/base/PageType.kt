@@ -20,6 +20,7 @@ enum class PageType(val title: String, val info: String) {
     ANR_TEST("ANRTest", "ANR 相关测试梳理"),
     JAR_TEST("JarTest", "动态加载 Jar 包测试"),
     PROTO_TEST("ProtoTest", "Protoc 序列化测试"),
+    NOTIFY_TEST("NotifyTest", "通知测试"),
 
     // KOTLIN 下面的跳转界面
     KOTLIN_COROUTINE_TEST("KotlinCoroutineTest", "Kotlin 协程相关总结"),

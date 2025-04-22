@@ -10,6 +10,7 @@ import com.example.gitsample.system.file.ActivityFileManager
 import com.example.gitsample.system.info.ActivitySystemInfo
 import com.example.gitsample.system.jar.ActivityJarTest
 import com.example.gitsample.system.kotlin.ActivityKotlinTest
+import com.example.gitsample.system.notify.ActivityNotifyCheck
 import com.example.gitsample.system.permission.ActivityPermissionCheck
 import com.example.gitsample.system.proto.ActivityProtoTest
 import com.example.gitsample.system.screen.ActivityScreenTest
@@ -57,6 +58,8 @@ class ActivitySystemList : BaseActivity<ActivitySystemListBinding>() {
             ActivityJarTest.open(this)
         }).addItem(CommonListItemData.obj(PageType.PROTO_TEST).clickListener {
             ActivityProtoTest.open(this)
+        }).addItem(CommonListItemData.obj(PageType.NOTIFY_TEST).clickListener {
+            ActivityNotifyCheck.open(this)
         }).refreshList()
     }
 }

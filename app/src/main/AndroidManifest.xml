@@ -172,6 +172,9 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name=".system.proto.ActivityProtoTest"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".system.notify.ActivityNotifyCheck"
             android:screenOrientation="portrait"/>
 
         <receiver
